@@ -1,0 +1,18 @@
+{
+  "name": "neo-smart-contract-examples",
+  "description": "NEO smart contract examples",
+  "version": "0.0.1",
+  "private": true,
+  "author": "Travis Lin",
+  "scripts": {
+    "rebuild": "rm -rf ./node_modules && npm install",
+    "rebuild:hard": "rm -rf ./node_modules && rm -f ./package-lock.json && npm install"
+  },
+  "dependencies": {
+    "@cityofzion/neon-js": "^3.2.1"
+  },
+  "devDependencies": {},
+  "//": [
+    "[there is where you add comments about this file]"
+  ]
+}

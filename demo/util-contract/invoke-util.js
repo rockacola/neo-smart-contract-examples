@@ -2,7 +2,7 @@
 
 // -- Bootstrap
 
-const Neon = require('../../lib/index')
+const Neon = require('@cityofzion/neon-js')
 const Query = Neon.rpc.Query
 const ContractParam = Neon.sc.ContractParam
 const fixed82num = Neon.u.fixed82num
