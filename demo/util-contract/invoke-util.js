@@ -7,6 +7,7 @@ const Query = Neon.rpc.Query
 const ContractParam = Neon.sc.ContractParam
 const fixed82num = Neon.u.fixed82num
 const hexstring2str = Neon.u.hexstring2str
+const reverseHex = Neon.u.reverseHex
 const rpcUrls = {
   testnetNeo2: 'http://seed2.neo.org:20332',
   testnetNeo4: 'http://seed4.neo.org:20332',
@@ -18,9 +19,10 @@ const contracts = {
   UtilContract_2: 'c9ccb3ee3019357f4769d067d7e4783d41504673',
   UtilContract_3: 'e5551964312eff43cf15af057ff3aae4d4b8bfc9',
   UtilContract_7: '8322cac3d30094c947615c944e9d3734b6e467bc',
+  UtilContract_9: '2ed7cb2fb83f5ed9c30177129da82475fbb2ac8a',
 }
 const rpcUrl = rpcUrls.testnetNeo2
-const contract = contracts.UtilContract_7
+const contract = contracts.UtilContract_9
 
 // -- Chain of command
 
@@ -30,6 +32,9 @@ async function main () {
   await rpcProfiles()
   await contractState()
   await versionDemo()
+  await magicNumberDemo()
+  await magicStringDemo()
+  await neoIdDemo()
   await addDemo()
   await multiplyDemo()
   await squareDemo()
@@ -40,6 +45,12 @@ async function main () {
   await arrayLengthDemo()
   await addArrayDemo()
   await blockHeightDemo()
+  await currentTimestampDemo()
+  await getTimestampDemo()
+  await getMerkleDemo()
+  await getBlockHashDemo()
+  await getConsensusDemo()
+  await getNextConsensusDemo()
 
   console.log('== END ==')
   console.log()
@@ -77,6 +88,39 @@ async function versionDemo() {
   /**
    * Not showing expected result...
    */
+}
+
+async function magicNumberDemo() {
+  console.log()
+  console.log('UtilContract.magic_number:')
+  const response = await Query.invoke(contract, ContractParam.string('magic_number')).execute(rpcUrl)
+  // console.log('response:', response)
+  // console.log('response.result.stack:', response.result.stack)
+  // console.log('response.result.stack[0].value:', response.result.stack[0].value)
+  const rawValue = response.result.stack[0].value[0].value
+  console.log(`rawValue: [${rawValue}], stringify: [${hexstring2str(rawValue)}]`)
+}
+
+async function magicStringDemo() {
+  console.log()
+  console.log('UtilContract.magic_string:')
+  const response = await Query.invoke(contract, ContractParam.string('magic_string')).execute(rpcUrl)
+  // console.log('response:', response)
+  // console.log('response.result.stack:', response.result.stack)
+  // console.log('response.result.stack[0].value:', response.result.stack[0].value)
+  const rawValue = response.result.stack[0].value[0].value
+  console.log(`rawValue: [${rawValue}], stringify: [${hexstring2str(rawValue)}]`)
+}
+
+async function neoIdDemo() {
+  console.log()
+  console.log('UtilContract.neo_id:')
+  const response = await Query.invoke(contract, ContractParam.string('neo_id')).execute(rpcUrl)
+  // console.log('response:', response)
+  // console.log('response.result.stack:', response.result.stack)
+  // console.log('response.result.stack[0].value:', response.result.stack[0].value)
+  const rawValue = response.result.stack[0].value[0].value
+  console.log(`rawValue: [${rawValue}], stringify: [${hexstring2str(rawValue)}]`)
 }
 
 async function addDemo() {
@@ -231,6 +275,106 @@ async function blockHeightDemo() {
   /**
    * Actual rawValue: 686569676874
    * Stringify to: height
+   */
+}
+
+async function currentTimestampDemo() {
+  console.log()
+  console.log('UtilContract.current_timestamp:')
+  const response = await Query.invoke(contract, ContractParam.string('current_timestamp')).execute(rpcUrl)
+  // console.log('response:', response)
+  // console.log('response.result.stack:', response.result.stack)
+  // console.log('response.result.stack[0].value:', response.result.stack[0].value)
+  const rawValue = response.result.stack[0].value[0].value
+  console.log(`rawValue: [${rawValue}], stringify: [${hexstring2str(rawValue)}]`)
+}
+
+async function getTimestampDemo() {
+  console.log()
+  console.log('UtilContract.get_timestamp:')
+  const response = await Query.invoke(
+      contract,
+      ContractParam.string('get_timestamp'),
+      ContractParam.array(ContractParam.integer(1))
+    ).execute(rpcUrl)
+  // console.log('response:', response)
+  // console.log('response.result.stack:', response.result.stack)
+  // console.log('response.result.stack[0].value:', response.result.stack[0].value)
+  const rawValue = response.result.stack[0].value
+  const ts = parseInt(rawValue) * 1000
+  const dt = new Date(ts)
+  console.log(`rawValue: [${rawValue}], dt: [${dt}]`)
+}
+
+async function getMerkleDemo() {
+  console.log()
+  console.log('UtilContract.get_merkle:')
+  const response = await Query.invoke(
+      contract,
+      ContractParam.string('get_merkle'),
+      ContractParam.array(ContractParam.integer(1))
+    ).execute(rpcUrl)
+  // console.log('response:', response)
+  // console.log('response.result.stack:', response.result.stack)
+  // console.log('response.result.stack[0].value:', response.result.stack[0].value)
+  const rawValue = response.result.stack[0].value
+  console.log(`rawValue: [${rawValue}], reverseHex: [${reverseHex(rawValue)}]`)
+  /**
+   * Merkle of block 1: 8e3a32ba3a7e8bdb0ad9a2ad064713e45bd20eb0dab0d2e77df5b5ce985276d0
+   */
+}
+
+async function getBlockHashDemo() {
+  console.log()
+  console.log('UtilContract.get_block_hash:')
+  const response = await Query.invoke(
+      contract,
+      ContractParam.string('get_block_hash'),
+      ContractParam.array(ContractParam.integer(1))
+    ).execute(rpcUrl)
+  // console.log('response:', response)
+  // console.log('response.result.stack:', response.result.stack)
+  // console.log('response.result.stack[0].value:', response.result.stack[0].value)
+  const rawValue = response.result.stack[0].value
+  console.log(`rawValue: [${rawValue}], reverseHex: [${reverseHex(rawValue)}]`)
+  /**
+   * Hash of block 1: 0012f8566567a9d7ddf25acb5cf98286c9703297de675d01ba73fbfe6bcb841c
+   */
+}
+
+async function getConsensusDemo() {
+  console.log()
+  console.log('UtilContract.get_consensus:')
+  const response = await Query.invoke(
+      contract,
+      ContractParam.string('get_consensus'),
+      ContractParam.array(ContractParam.integer(1))
+    ).execute(rpcUrl)
+  // console.log('response:', response)
+  // console.log('response.result.stack:', response.result.stack)
+  // console.log('response.result.stack[0].value:', response.result.stack[0].value)
+  const rawValue = response.result.stack[0].value
+  console.log(`rawValue: [${rawValue}]`)
+  /**
+   * ConsensusData of block 1: 12663300345212575697
+   */
+}
+
+async function getNextConsensusDemo() {
+  console.log()
+  console.log('UtilContract.get_next_consensus:')
+  const response = await Query.invoke(
+      contract,
+      ContractParam.string('get_next_consensus'),
+      ContractParam.array(ContractParam.integer(1))
+    ).execute(rpcUrl)
+  // console.log('response:', response)
+  // console.log('response.result.stack:', response.result.stack)
+  // console.log('response.result.stack[0].value:', response.result.stack[0].value)
+  const rawValue = response.result.stack[0].value
+  console.log(`rawValue: [${rawValue}], reverseHex: [${reverseHex(rawValue)}]`)
+  /**
+   * Next Consensus of block 1: 257b026aecfe8e9878a2219a08b0f382b92d81f3
    */
 }
 
