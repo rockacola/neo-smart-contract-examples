@@ -49,6 +49,13 @@ async function main () {
   await addArrayDemo()
   await setStorageDemo()
   await getStorageDemo()
+  await blockHeightDemo()
+  await currentTimestampDemo()
+  await getTimestampDemo()
+  await getMerkleDemo()
+  await getBlockHashDemo()
+  await getConsensusDemo()
+  await getNextConsensusDemo()
 
   console.log('== END ==')
   console.log()
@@ -380,7 +387,136 @@ async function getStorageDemo() {
   console.log(`rawValue: [${rawValue}], stringify: [${hexstring2str(rawValue)}]`)
 }
 
+async function blockHeightDemo() {
+  console.log()
+  console.log('UtilContract.height:')
 
+  const props = {
+    scriptHash: contract,
+    operation: 'height',
+    args: []
+  }
+  const script = Neon.sc.createScript(props)
+  // console.log('script:', script)
+  const response = await Query.invokeScript(script).execute(rpcUrl)
+  // console.log('response:', response)
+  // console.log('response.result.stack:', response.result.stack)
+  const rawValue = response.result.stack[0].value
+  console.log(`rawValue: [${rawValue}]`)
+}
+
+async function currentTimestampDemo() {
+  console.log()
+  console.log('UtilContract.current_timestamp:')
+
+  const props = {
+    scriptHash: contract,
+    operation: 'current_timestamp',
+    args: []
+  }
+  const script = Neon.sc.createScript(props)
+  // console.log('script:', script)
+  const response = await Query.invokeScript(script).execute(rpcUrl)
+  // console.log('response:', response)
+  // console.log('response.result.stack:', response.result.stack)
+  const rawValue = response.result.stack[0].value
+  console.log(`rawValue: [${rawValue}]`)
+}
+
+async function getTimestampDemo() {
+  console.log()
+  console.log('UtilContract.get_timestamp:')
+
+  const blockHeight = 1
+  const props = {
+    scriptHash: contract,
+    operation: 'get_timestamp',
+    args: [blockHeight]
+  }
+  const script = Neon.sc.createScript(props)
+  // console.log('script:', script)
+  const response = await Query.invokeScript(script).execute(rpcUrl)
+  // console.log('response:', response)
+  // console.log('response.result.stack:', response.result.stack)
+  const rawValue = response.result.stack[0].value
+  console.log(`rawValue: [${rawValue}]`)
+}
+
+async function getMerkleDemo() {
+  console.log()
+  console.log('UtilContract.get_merkle:')
+
+  const blockHeight = 1
+  const props = {
+    scriptHash: contract,
+    operation: 'get_merkle',
+    args: [blockHeight]
+  }
+  const script = Neon.sc.createScript(props)
+  // console.log('script:', script)
+  const response = await Query.invokeScript(script).execute(rpcUrl)
+  // console.log('response:', response)
+  // console.log('response.result.stack:', response.result.stack)
+  const rawValue = response.result.stack[0].value
+  console.log(`rawValue: [${rawValue}]`)
+}
+
+async function getBlockHashDemo() {
+  console.log()
+  console.log('UtilContract.get_block_hash:')
+
+  const blockHeight = 1
+  const props = {
+    scriptHash: contract,
+    operation: 'get_block_hash',
+    args: [blockHeight]
+  }
+  const script = Neon.sc.createScript(props)
+  // console.log('script:', script)
+  const response = await Query.invokeScript(script).execute(rpcUrl)
+  // console.log('response:', response)
+  // console.log('response.result.stack:', response.result.stack)
+  const rawValue = response.result.stack[0].value
+  console.log(`rawValue: [${rawValue}]`)
+}
+
+async function getConsensusDemo() {
+  console.log()
+  console.log('UtilContract.get_consensus:')
+
+  const blockHeight = 1
+  const props = {
+    scriptHash: contract,
+    operation: 'get_consensus',
+    args: [blockHeight]
+  }
+  const script = Neon.sc.createScript(props)
+  // console.log('script:', script)
+  const response = await Query.invokeScript(script).execute(rpcUrl)
+  // console.log('response:', response)
+  // console.log('response.result.stack:', response.result.stack)
+  const rawValue = response.result.stack[0].value
+  console.log(`rawValue: [${rawValue}]`)
+}
+
+async function getNextConsensusDemo() {
+  console.log()
+  console.log('UtilContract.get_next_consensus:')
+
+  const blockHeight = 1
+  const props = {
+    scriptHash: contract,
+    operation: 'get_next_consensus',
+    args: [blockHeight]
+  }
+  const script = Neon.sc.createScript(props)
+  // console.log('script:', script)
+  const response = await Query.invokeScript(script).execute(rpcUrl)
+  // console.log('response:', response)
+  // console.log('response.result.stack:', response.result.stack)
+  const rawValue = response.result.stack[0].value
+  console.log(`rawValue: [${rawValue}]`)
+}
 
 // -- Execute
 
