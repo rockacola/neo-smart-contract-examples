@@ -1,38 +1,8 @@
-"""
-TODO:
-- Get current transaction hash
-- Get invoker's address
-- Get attached asset details
-- Get string name of the type of input argument
-- Concate 2 values of any datatype together
-- Concate n strings together
-- String replace
-- String indexOf
-- Set key-value into context (test non-ASCII characters, and crazy length)
-- Get key-value from context
-- Check if a key exists in context
-- Array storage example (pop, push, fetch, count)
-- Get block timestamp
-
-Test Command:
-    build ./demo/contracts/util-contract.py test 0710 05 True False version
-    build ./demo/contracts/util-contract.py test 0710 05 True False my_address --attach-gas=1
-    build ./demo/contracts/util-contract.py test 0710 05 True False is_address ['AK2nJJpJr6o664CWJKi1QRXjqeic2zRp8y'] --attach-gas=1
-    build ./demo/contracts/util-contract.py test 0710 05 True False is_witness_address ['AK2nJJpJr6o664CWJKi1QRXjqeic2zRp8y']
-    build ./demo/contracts/util-contract.py test 0710 05 True False char_count ['AK2nJJpJr6o664CWJKi1QRXjqeic2zRp8y']
-
-Import Command:
-    import contract ./demo/contracts/util-contract.avm 0710 05 True False
-
-Example Invocation:
-    testinvoke 8322cac3d30094c947615c944e9d3734b6e467bc version
-    testinvoke 8322cac3d30094c947615c944e9d3734b6e467bc my_address [] --attach-gas=1 # Output: b'#\xba\'\x03\xc52c\xe8\xd6\xe5"\xdc2 39\xdc\xd8\xee\xe9'
-    testinvoke 8322cac3d30094c947615c944e9d3734b6e467bc is_address ['AK2nJJpJr6o664CWJKi1QRXjqeic2zRp8y'] --attach-gas=1
-"""
 from boa.blockchain.vm.System.ExecutionEngine import GetScriptContainer, GetExecutingScriptHash
 from boa.blockchain.vm.Neo.Transaction import *
 from boa.blockchain.vm.Neo.Runtime import Log, Notify, GetTrigger, CheckWitness
 from boa.blockchain.vm.Neo.Blockchain import GetHeight, GetHeader
+from boa.blockchain.vm.Neo.Header import GetMerkleRoot, GetTimestamp, GetHash, GetVersion, GetConsensusData, GetNextConsensus
 from boa.blockchain.vm.Neo.Action import RegisterAction
 from boa.blockchain.vm.Neo.TriggerType import Application, Verification
 from boa.blockchain.vm.Neo.Storage import GetContext, Get, Put, Delete
@@ -41,11 +11,12 @@ from boa.code.builtins import concat, list, range, take, substr
 
 
 # Global
-VERSION = 7
-OWNER = b'#\xba\'\x03\xc52c\xe8\xd6\xe5"\xdc2 39\xdc\xd8\xee\xe9'  # script hash for address: AK2nJJpJr6o664CWJKi1QRXjqeic2zRp8y
-# NEO_ASSET_ID = b'\x9b|\xff\xda\xa6t\xbe\xae\x0f\x93\x0e\xbe`\x85\xaf\x90\x93\xe5\xfeV\xb3J\\"\x0c\xcd\xcfn\xfc3o\xc5'
-# GAS_ASSET_ID = b'\xe7-(iy\xeel\xb1\xb7\xe6]\xfd\xdf\xb2\xe3\x84\x10\x0b\x8d\x14\x8ewX\xdeB\xe4\x16\x8bqy,`'
-
+VERSION = 9
+OWNER = b'\x96P\xac\xd6\xb7S,\xb4\xeaiU\xedK\x0f\xd3\xaa\xa9\xc9Q\x87'
+NEO_ASSET_ID = b'\x9b|\xff\xda\xa6t\xbe\xae\x0f\x93\x0e\xbe`\x85\xaf\x90\x93\xe5\xfeV\xb3J\\"\x0c\xcd\xcfn\xfc3o\xc5'
+GAS_ASSET_ID = b'\xe7-(iy\xeel\xb1\xb7\xe6]\xfd\xdf\xb2\xe3\x84\x10\x0b\x8d\x14\x8ewX\xdeB\xe4\x16\x8bqy,`'
+MAGIC_NUMBER = 42
+MAGIC_STRING = 'rainbowsix'
 
 def Main(operation: str, args: list) -> bytearray:
     trigger = GetTrigger()
@@ -64,6 +35,16 @@ def Main(operation: str, args: list) -> bytearray:
             return result
         elif operation == 'is_owner':       # Checking if invoker is the owner of the smart contract
             result = do_is_owner()
+            return result
+        # Constant
+        elif operation == 'magic_number':   # Return stored number constant in the contract
+            result = do_magic_number()
+            return result
+        elif operation == 'magic_string':   # Return stored string constant in the contract
+            result = do_magic_string()
+            return result
+        elif operation == 'neo_id':         # Return stored bytearray constant in the contract
+            result = do_neo_id()
             return result
         # Number
         elif operation == 'add':            # Adding 2 numbers together
@@ -95,15 +76,43 @@ def Main(operation: str, args: list) -> bytearray:
         elif operation == 'add_array':      # Adding all numbers in array together
             result = do_add_array(args)
             return result
+        # Storage
+        elif operation == 'set_storage':    # Update storage of specified key
+            result = do_set_storage(args)
+            return result
+        elif operation == 'get_storage':    # Obtain stored data of specified key
+            result = do_get_storage(args)
+            return result
         # Block
         elif operation == 'height':         # Get current block height
             result = do_height()
+            return result
+        elif operation == 'current_timestamp':      # Get timestamp of current block
+            result = do_current_timestamp()
+            return result
+        elif operation == 'get_timestamp':      # Get timestamp of current block
+            result = do_get_timestamp(args)
+            return result
+        elif operation == 'get_merkle':
+            result = do_get_merkle(args)
+            return result
+        elif operation == 'get_block_hash':
+            result = do_get_block_hash(args)
+            return result
+        elif operation == 'get_consensus':
+            result = do_get_consensus(args)
+            return result
+        elif operation == 'get_next_consensus':
+            result = do_get_next_consensus(args)
             return result
         # Account
         elif operation == 'my_address':     # Get invoker's wallet address in bytearray
             result = do_my_address()
             return result
-        elif operation == 'is_address':      # Check if invoker's address matches the specified address
+        elif operation == 'target_address': # Get the target address in bytearray
+            result = do_target_address()
+            return result
+        elif operation == 'is_address':     # Check if invoker's address matches the specified address
             result = do_is_address(args)
             return result
         elif operation == 'is_witness_address':      # Check if invoker's address matches the specified address
@@ -125,6 +134,24 @@ def do_version() -> int:
 
 def do_is_owner() -> bool:
     return CheckWitness(OWNER)
+
+
+# -- Contant
+
+
+def do_magic_number():
+    result = MAGIC_NUMBER
+    return result
+
+
+def do_magic_string():
+    result = MAGIC_STRING
+    return result
+
+
+def do_neo_id():
+    result = NEO_ASSET_ID
+    return result
 
 
 # -- Number
@@ -227,12 +254,132 @@ def do_add_array(args: list) -> int:
     return False
 
 
+# -- Storage
+
+
+def do_set_storage(args: list) -> bool:
+    if len(args) > 1:
+        key = args[0]
+        data = args[1]
+        context = GetContext()
+        result = set_storage(context, key, data)
+        return result
+    Notify('invalid argument length')
+    return False
+
+
+def do_get_storage(args: list) -> bytearray:
+    if len(args) > 0:
+        key = args[0]
+        context = GetContext()
+        result = get_storage(context, key)
+        return result
+    Notify('invalid argument length')
+    return False
+
+
 # -- Block
 
 
 def do_height() -> int:
+    Log('do_height triggered.')
     current_height = GetHeight()
+    Log('current_height:')
+    Log(current_height)
     return current_height
+
+
+def do_current_timestamp() -> bytearray:
+    Log('do_current_timestamp triggered.')
+    current_height = GetHeight()
+    Log('current_height:')
+    Log(current_height)
+    current_block = GetHeader(current_height)
+    # Log('current_block:')
+    # Log(current_block)
+    timestamp = current_block.Timestamp
+    Log('timestamp:')
+    Log(timestamp)  # Example b'\xc1\xc7|Z'
+    return timestamp
+
+
+def do_get_timestamp(args: list) -> bytearray:
+    Log('do_get_timestamp triggered.')
+    if len(args) > 0:
+        height = args[0]
+        Log('height:')
+        Log(height)
+        header = GetHeader(height)
+        timestamp = header.Timestamp
+        Log('timestamp:')
+        Log(timestamp)
+        return timestamp
+    Notify('invalid argument length')
+    return False
+
+
+def do_get_merkle(args: list) -> bytearray:
+    Log('do_get_merkle triggered.')
+    if len(args) > 0:
+        height = args[0]
+        Log('height:')
+        Log(height)
+        header = GetHeader(height)
+        version = GetVersion(header)
+        Log('version:')
+        Log(version)
+        merkle = GetMerkleRoot(header)
+        Log('merkle:')
+        Log(merkle)
+        return merkle
+    Notify('invalid argument length')
+    return False
+
+
+def do_get_block_hash(args: list) -> bytearray:
+    Log('do_get_block_hash triggered.')
+    if len(args) > 0:
+        height = args[0]
+        Log('height:')
+        Log(height)
+        header = GetHeader(height)
+        # version = GetVersion(header)
+        hash_val = GetHash(header)
+        Log('hash_val:')
+        Log(hash_val)
+        return hash_val
+    Notify('invalid argument length')
+    return False
+
+
+def do_get_consensus(args: list) -> bytearray:
+    Log('do_get_consensus triggered.')
+    if len(args) > 0:
+        height = args[0]
+        Log('height:')
+        Log(height)
+        header = GetHeader(height)
+        consensus = header.ConsensusData
+        Log('consensus:')
+        Log(consensus)
+        return consensus
+    Notify('invalid argument length')
+    return False
+
+
+def do_get_next_consensus(args: list) -> bytearray:
+    Log('do_get_next_consensus triggered.')
+    if len(args) > 0:
+        height = args[0]
+        Log('height:')
+        Log(height)
+        header = GetHeader(height)
+        next_consensus = header.NextConsensus
+        Log('next_consensus:')
+        Log(next_consensus)
+        return next_consensus
+    Notify('invalid argument length')
+    return False
 
 
 # -- Account
@@ -240,10 +387,18 @@ def do_height() -> int:
 
 def do_my_address() -> bytearray:
     Log('do_my_address triggered.')
-    sender_addr = get_my_address()
-    Log('sender_addr:')
-    Log(sender_addr)
-    return sender_addr
+    sender_address = get_my_address()
+    Log('sender_address:')
+    Log(sender_address)
+    return sender_address
+
+
+def do_target_address() -> bytearray:
+    Log('do_target_address triggered.')
+    receiver_address = get_target_address()
+    Log('receiver_address:')
+    Log(receiver_address)
+    return receiver_address
 
 
 def do_is_address(args: list) -> bool:
@@ -295,22 +450,35 @@ def get_fibonacci(n: int) -> int:
 
 
 def get_my_address() -> bytearray:
-    # Log('get_my_address triggered.')
+    Log('get_my_address triggered.')
     tx = GetScriptContainer()
-    # Log('tx:')
-    # Log(tx)
-    # TODO: tx None check
+    Log('tx:')
+    Log(tx)
     references = tx.References
-    # Log('references:')
-    # Log(references)
-    # TODO: references None and length check
-    # receiver_addr = GetExecutingScriptHash()
-    # Log('receiver_addr:')
-    # Log(receiver_addr)
+    Log('references:')
+    Log(references)
     reference = references[0]
-    # Log('reference:')
-    # Log(reference)
-    sender_addr = reference.ScriptHash
-    # Log('sender_addr:')
-    # Log(sender_addr)
-    return sender_addr
+    Log('reference:')
+    Log(reference)
+    sender_address = reference.ScriptHash
+    Log('sender_address:')
+    Log(sender_address)
+    return sender_address
+
+
+def get_target_address() -> bytearray:
+    Log('get_target_address triggered.')
+    receiver_address = GetExecutingScriptHash()
+    Log('receiver_address:')
+    Log(receiver_address)
+    return receiver_address
+
+
+def set_storage(context, key: str, value: bytearray) -> bool:
+    Put(context, key, value)
+    return True
+
+
+def get_storage(context, key: str) -> bytearray:
+    value = Get(context, key)
+    return value
