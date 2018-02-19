@@ -43,6 +43,12 @@ async function main () {
   await squareDemo()
   await powerDemo()
   await fibonacciDemo()
+  await charCountDemo()
+  await stringReverseDemo()
+  await arrayLengthDemo()
+  await addArrayDemo()
+  await setStorageDemo()
+  await getStorageDemo()
 
   console.log('== END ==')
   console.log()
@@ -240,6 +246,141 @@ async function fibonacciDemo() {
   const rawValue = response.result.stack[0].value
   console.log(`rawValue: [${rawValue}]`)
 }
+
+async function charCountDemo() {
+  console.log()
+  console.log('UtilContract.char_count:')
+
+  const props = {
+    scriptHash: contract,
+    operation: 'char_count',
+    args: [{ "type": "String", "value": "internationalization" }]
+  }
+  const script = Neon.sc.createScript(props)
+  // console.log('script:', script)
+  const response = await Query.invokeScript(script).execute(rpcUrl)
+  // console.log('response:', response)
+  // console.log('response.result.stack:', response.result.stack)
+  const rawValue = response.result.stack[0].value
+  console.log(`rawValue: [${rawValue}]`)
+}
+
+async function stringReverseDemo() {
+  console.log()
+  console.log('UtilContract.string_reverse:')
+
+  const props = {
+    scriptHash: contract,
+    operation: 'string_reverse',
+    args: [{ "type": "String", "value": "live" }]
+  }
+  const script = Neon.sc.createScript(props)
+  // console.log('script:', script)
+  const response = await Query.invokeScript(script).execute(rpcUrl)
+  // console.log('response:', response)
+  // console.log('response.result.stack:', response.result.stack)
+  const rawValue = response.result.stack[0].value
+  console.log(`rawValue: [${rawValue}], stringify: [${hexstring2str(rawValue)}]`)
+}
+
+async function arrayLengthDemo() {
+  console.log()
+  console.log('UtilContract.length:')
+  
+  const props = {
+    scriptHash: contract,
+    operation: 'length',
+    args: [
+      { "type": "String", "value": "a" },
+      { "type": "Integer", "value": 2 },
+      { "type": "Boolean", "value": true }, // NOTE: This throws error when value is false, likely a neon-js bug
+    ]
+  }
+  const script = Neon.sc.createScript(props)
+  // console.log('script:', script)
+  const response = await Query.invokeScript(script).execute(rpcUrl)
+  // console.log('response:', response)
+  // console.log('response.result.stack:', response.result.stack)
+  const rawValue = response.result.stack[0].value
+  console.log(`rawValue: [${rawValue}]`)
+}
+
+async function addArrayDemo() {
+  console.log()
+  console.log('UtilContract.add_array:')
+
+  const props = {
+    scriptHash: contract,
+    operation: 'add_array',
+    args: [2, 3, 4]
+  }
+  const script = Neon.sc.createScript(props)
+  // console.log('script:', script)
+  const response = await Query.invokeScript(script).execute(rpcUrl)
+  // console.log('response:', response)
+  // console.log('response.result.stack:', response.result.stack)
+  const rawValue = response.result.stack[0].value
+  console.log(`rawValue: [${rawValue}]`)
+}
+
+async function setStorageDemo() {
+  console.log()
+  console.log('UtilContract.set_storage:')
+
+  const key = 'neon_sb_key'
+  const val = 'neon_sb_' + Date.now()
+  console.log('val:', val)
+
+  const props = {
+    scriptHash: contract,
+    operation: 'set_storage',
+    args: [
+      { "type": "String", "value": key },
+      { "type": "String", "value": val },
+    ]
+  }
+  const config = {
+    net: 'TestNet',
+    address: wallets.otto.address,
+    privateKey: wallets.otto.wif,
+    intents: Neon.api.makeIntent({ GAS: 0.001 }, wallets.otto.address), // NOTE: Seems that I must have an intent, so I send GAS to myself
+    script: props,
+    gas: 0
+  }
+
+  const response = await Neon.api.doInvoke(config)
+  // console.log('response:', response)
+  if (response.response.result === false) {
+    console.log('doInvoke() failed')
+    return;
+  }
+
+  console.log(`doInvoke() success. TX: [${response.response.txid}], `)
+  // console.log('response.tx:', response.tx)
+}
+
+async function getStorageDemo() {
+  console.log()
+  console.log('UtilContract.get_storage:')
+
+  const key = 'neon_sb_key'
+  const props = {
+    scriptHash: contract,
+    operation: 'get_storage',
+    args: [
+      { "type": "String", "value": key },
+    ]
+  }
+  const script = Neon.sc.createScript(props)
+  // console.log('script:', script)
+  const response = await Query.invokeScript(script).execute(rpcUrl)
+  // console.log('response:', response)
+  console.log('response.result.stack:', response.result.stack)
+  const rawValue = response.result.stack[0].value
+  console.log(`rawValue: [${rawValue}], stringify: [${hexstring2str(rawValue)}]`)
+}
+
+
 
 // -- Execute
 
