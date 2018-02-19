@@ -38,7 +38,7 @@ async function main () {
   await rpcProfiles()
   await contractState()
   await versionDemo()
-  // isOwnerDemo
+  await isOwnerDemo()
   await magicNumberDemo()
   await magicStringDemo()
   await neoIdDemo()
@@ -101,6 +101,17 @@ async function versionDemo() {
   /**
    * Not showing expected result...
    */
+}
+
+async function isOwnerDemo() {
+  console.log()
+  console.log('UtilContract.is_owner:')
+  const response = await Query.invoke(contract, ContractParam.string('is_owner')).execute(rpcUrl)
+  // console.log('response:', response)
+  // console.log('response.result.stack:', response.result.stack)
+  // console.log('response.result.stack[0].value:', response.result.stack[0].value)
+  const rawValue = response.result.stack[0].value[0].value
+  console.log(`rawValue: [${rawValue}], stringify: [${hexstring2str(rawValue)}]`)
 }
 
 async function magicNumberDemo() {
