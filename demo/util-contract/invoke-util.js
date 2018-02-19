@@ -15,6 +15,12 @@ const rpcUrls = {
   mainnetNeo3: 'http://seed3.neo.org:10332', // Mainnet running old Neo version
   privnet: 'http://127.0.0.1:30333',
 }
+const wallets = {
+  otto: {
+    address: 'AHY2eXXtkdxJ4nAJ9sWSP5n83B7nPWqBnb',
+    wif: 'KwW2MiwwVJoDCaFZw3M6iv9vtXFJtMH6Un69Sw4ZBoMYsMyBmuMG'
+  }
+}
 const contracts = {
   UtilContract_2: 'c9ccb3ee3019357f4769d067d7e4783d41504673',
   UtilContract_3: 'e5551964312eff43cf15af057ff3aae4d4b8bfc9',
@@ -32,6 +38,7 @@ async function main () {
   await rpcProfiles()
   await contractState()
   await versionDemo()
+  // isOwnerDemo
   await magicNumberDemo()
   await magicStringDemo()
   await neoIdDemo()
@@ -44,6 +51,8 @@ async function main () {
   await stringReverseDemo()
   await arrayLengthDemo()
   await addArrayDemo()
+  await setStorageDemo()
+  await getStorageDemo()
   await blockHeightDemo()
   await currentTimestampDemo()
   await getTimestampDemo()
@@ -51,6 +60,10 @@ async function main () {
   await getBlockHashDemo()
   await getConsensusDemo()
   await getNextConsensusDemo()
+  // myAddressDemo
+  // targetAddressDemo
+  // isAddressDemo
+  // isWitnessAddressDemo
 
   console.log('== END ==')
   console.log()
@@ -261,6 +274,57 @@ async function addArrayDemo() {
   console.log('response.result.stack:', response.result.stack)
   const rawValue = response.result.stack[0].value
   console.log(`rawValue: [${rawValue}], type: [${typeof(rawValue)}]`)
+}
+
+async function setStorageDemo() {
+  console.log()
+  console.log('UtilContract.set_storage:')
+
+  const key = 'neon_test_key'
+  const val = 'neon_test_' + Date.now()
+  console.log('val:', val)
+
+  const script = {
+    scriptHash: contract,
+    operation: 'set_storage',
+    args: ContractParam.array(ContractParam.string(key), ContractParam.string(val))
+  }
+  const config = {
+    net: 'TestNet',
+    address: wallets.otto.address,
+    privateKey: wallets.otto.wif,
+    intents: Neon.api.makeIntent({ GAS: 0.001 }, wallets.otto.address), // NOTE: Seems that I must have an intent, so I send GAS to myself
+    script,
+    gas: 0
+  }
+  const response = await Neon.api.doInvoke(config)
+  // console.log('response:', response)
+  if (response.response.result === false) {
+    console.log('doInvoke() failed')
+    return;
+  }
+
+  console.log(`doInvoke() success. TX: [${response.response.txid}], `)
+  // console.log('response.tx:', response.tx)
+}
+
+async function getStorageDemo() {
+  console.log()
+  console.log('UtilContract.get_storage:')
+  const response = await Query.invoke(
+      contract,
+      ContractParam.string('get_storage'),
+      ContractParam.array(
+        ContractParam.string('lorem'),
+      )
+    ).execute(rpcUrl)
+  // console.log('response:', response)
+  console.log('response.result.stack:', response.result.stack)
+  const rawValue = response.result.stack[0].value
+  console.log(`rawValue: [${rawValue}], stringify: [${hexstring2str(rawValue)}]`)
+  /**
+   * Expect: lorem_value
+   */
 }
 
 async function blockHeightDemo() {
