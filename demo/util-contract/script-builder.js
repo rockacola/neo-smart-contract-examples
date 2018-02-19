@@ -34,8 +34,8 @@ async function main () {
   console.log('== NeonJs ScriptBuilder Demo - UtilContract ==')
 
   await versionDemo()
-  await isOwnerDemo()
-  await magicNumberDemo()
+  await isOwnerDemo() // No desirable data from response
+  await magicNumberDemo() // Buggy response
   await magicStringDemo()
   await neoIdDemo()
   await addDemo()
@@ -56,6 +56,10 @@ async function main () {
   await getBlockHashDemo()
   await getConsensusDemo()
   await getNextConsensusDemo()
+  await myAddressDemo() // No desirable data from response
+  // targetAddressDemo
+  // isAddressDemo
+  // isWitnessAddressDemo
 
   console.log('== END ==')
   console.log()
@@ -516,6 +520,36 @@ async function getNextConsensusDemo() {
   // console.log('response.result.stack:', response.result.stack)
   const rawValue = response.result.stack[0].value
   console.log(`rawValue: [${rawValue}]`)
+}
+
+async function myAddressDemo() {
+  console.log()
+  console.log('UtilContract.my_address:')
+
+  const props = {
+    scriptHash: contract,
+    operation: 'my_address',
+    args: []
+  }
+  const config = {
+    net: 'TestNet',
+    address: wallets.otto.address,
+    privateKey: wallets.otto.wif,
+    intents: Neon.api.makeIntent({ GAS: 0.001 }, wallets.otto.address), // NOTE: Seems that I must have an intent, so I send GAS to myself
+    script: props,
+    gas: 0
+  }
+
+  const response = await Neon.api.doInvoke(config)
+  // console.log('response:', response)
+  if (response.response.result === false) {
+    console.log('doInvoke() failed')
+    return;
+  }
+
+  console.log(`doInvoke() success. TX: [${response.response.txid}], `)
+  // console.log('response.tx:', response.tx)
+
 }
 
 // -- Execute
