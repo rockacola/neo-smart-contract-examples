@@ -20,7 +20,7 @@ const wallets = {
   otto: {
     address: 'AHY2eXXtkdxJ4nAJ9sWSP5n83B7nPWqBnb',
     wif: 'KwW2MiwwVJoDCaFZw3M6iv9vtXFJtMH6Un69Sw4ZBoMYsMyBmuMG'
-  }
+  },
 }
 const contracts = {
   UtilContract_9: '2ed7cb2fb83f5ed9c30177129da82475fbb2ac8a',
