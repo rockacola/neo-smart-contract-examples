@@ -27,23 +27,25 @@ const wallets = {
 }
 const contracts = {
   NeoAlias_17: '8a092d91a822192b20e91722dc3dea28dfdb5cbd',
+  NeoAlias_18: '83d3ddd44f4c197152b827f3660b00a49fcb5d22',
 }
 const rpcUrl = rpcUrls.testnetNeo2
-const contract = contracts.NeoAlias_17
+const contract = contracts.NeoAlias_18
 
 // -- Chain of command
 
 async function main () {
   console.log('== NeonJs ScriptBuilder Demo - NeoAlias ==')
 
-  // await versionDemo()
+  await versionDemo()
   // await isOwnerDemo() // No desirable data from response
   // await countAllDemo()
+  // await getAllIndexDemo()
   // await countAliasDemo()
   // await getAliasDemo()
-  // await setAliasDemo()
+  await setAliasDemo()
   // await getAliasScoreDemo()
-  await voteAliasDemo()
+  // await voteAliasDemo()
 
   console.log('== END ==')
   console.log()
@@ -112,6 +114,26 @@ async function countAllDemo() {
   console.log(`rawValue: [${rawValue}]`)
 }
 
+
+async function getAllIndexDemo() {
+  console.log()
+  console.log('UtilContract.get_all_index:')
+
+  const indexString = '0'
+  const props = {
+    scriptHash: contract,
+    operation: 'get_all_index',
+    args: [{ "type": "String", "value": indexString }]
+  }
+  const script = Neon.sc.createScript(props)
+  // console.log('script:', script)
+  const response = await Query.invokeScript(script).execute(rpcUrl)
+  // console.log('response:', response)
+  // console.log('response.result.stack:', response.result.stack)
+  const rawValue = response.result.stack[0].value
+  console.log(`rawValue: [${rawValue}]`)
+}
+
 async function countAliasDemo() {
   console.log()
   console.log('UtilContract.count_alias:')
@@ -134,6 +156,7 @@ async function getAliasDemo() {
   console.log()
   console.log('UtilContract.get_alias:')
 
+  const indexString = '0'
   const props = {
     scriptHash: contract,
     operation: 'get_alias',
@@ -143,14 +166,14 @@ async function getAliasDemo() {
     // ],
     args: [
       { "type": "String", "value": wallets.ayu.address },
-      { "type": "String", "value": '0' }, // Use string may workaround it
+      { "type": "String", "value": indexString }, // Use string may workaround it
     ],
   }
   const script = Neon.sc.createScript(props)
   // console.log('script:', script)
   const response = await Query.invokeScript(script).execute(rpcUrl)
-  // console.log('response:', response)
-  // console.log('response.result.stack:', response.result.stack)
+  console.log('response:', response)
+  console.log('response.result.stack:', response.result.stack)
   const rawValue = response.result.stack[0].value
   console.log(`rawValue: [${rawValue}]`)
 }
@@ -161,15 +184,17 @@ async function setAliasDemo() {
 
   const newAlias = 'ayu_' + Date.now()
   console.log('newAlias:', newAlias)
-  const invokerAddr = wallets.otto.address
-  // const invokerAddr = Neon.u.reverseHex(Neon.wallet.getScriptHashFromAddress(wallets.otto.address)) // 1351f0fbad8bfff9629f269081972e97c8e87441
+  // const invokerAddr = wallets.otto.address
+  const invokerAddr = Neon.u.reverseHex(Neon.wallet.getScriptHashFromAddress(wallets.otto.address)) // 1351f0fbad8bfff9629f269081972e97c8e87441
   console.log('invokerAddr:', invokerAddr)
+  const targetAddr = Neon.u.reverseHex(Neon.wallet.getScriptHashFromAddress(wallets.ayu.address)) // b73a6af58ae200ae36a59cd1546f735c0fc3f7ec
+  console.log('targetAddr:', targetAddr)
   const props = {
     scriptHash: contract,
     operation: 'set_alias',
     args: [
       { "type": "String", "value": invokerAddr },
-      { "type": "String", "value": wallets.ayu.address },
+      { "type": "String", "value": targetAddr },
       { "type": "String", "value": newAlias },
     ]
   }
