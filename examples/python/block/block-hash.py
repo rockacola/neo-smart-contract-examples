@@ -8,7 +8,7 @@ Available on CoZ TestNet:   False
 Available on MainNet:       False
 
 Example: (return as bytearray)
-    Test Invoke:            build /path/to/block-hash.py test 02 07 False False 1
+    Test Invoke:            build /path/to/block-hash.py test 02 05 False False 1
     Expected Result:        bytearray(b'\xbf\xa9\xdd\x88\xd2\xde\xb8\x15\x8cdl\x15\x8f\x13\x97%\xd1P\xe6y\x12!\t\x13\x8a\x8a\xd7s;ix\x8b')
     Operation Count:        53
     GAS Consumption:        0.144

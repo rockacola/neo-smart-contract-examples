@@ -134,6 +134,13 @@ build /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/pyth
 import contract /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/block/block-hash.avm 02 02 False False
 ```
 
+##### Block Consensus
+
+``` py
+build /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/block/block-consensus.py test 02 02 False False 1
+import contract /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/block/block-consensus.avm 02 02 False False
+```
+
 #### Account
 
 ##### Is Owner
