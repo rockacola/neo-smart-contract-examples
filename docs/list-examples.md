@@ -31,7 +31,7 @@ Code examples on writing smart contract for tackling specific problem.
 | Block | Block Merkle | Get merkle value of a given block height. | [Source](../examples/python/block/block-merkle.py) | N/A
 | Block | Block Hash | Get hash of a given block height. | [Source](../examples/python/block/block-hash.py) | N/A
 | Block | Block Consensus | Get consensus value of a given block height. | [Source](../examples/python/block/block-consensus.py) | N/A
-| Block | Next Consensus | Get next consensus value of a given block height. | N/A | N/A
+| Block | Next Consensus | Get next consensus value of a given block height. | [Source](../examples/python/block/next-consensus.py) | N/A
 | Account | My Address | Get contract invoker's address. | N/A | N/A
 | Account | Target Address | Get contract target's address. | N/A | N/A
 | Account | Is Owner | Check if invoker's address matches a static address. | [Source](../examples/python/account/is-owner.py) | N/A
