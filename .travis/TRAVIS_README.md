@@ -43,6 +43,13 @@ build /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/pyth
 import contract /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/number/multiply.avm 0505 02 False False
 ```
 
+##### Square
+
+``` py
+build /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/number/square.py test 0505 02 False False 7
+import contract /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/number/square.avm 0505 02 False False
+```
+
 #### String
 
 ##### Character Count

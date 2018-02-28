@@ -11,7 +11,7 @@ Code examples on writing smart contract for tackling specific problem.
 | Constant | Echo | Returns the exact value as of its input. | N/A | N/A
 | Number | Add | Sum 2 input numbers together. | [Source](../examples/python/number/add.py) | N/A
 | Number | Multiply | Multiply 2 input numbers together. | [Source](../examples/python/number/multiply.py) | N/A
-| Number | Square | Returns square of an input number. | N/A | N/A
+| Number | Square | Returns square of an input number. | [Source](../examples/python/number/square.py) | N/A
 | Number | Power | Base to the exponent power of input numbers. | N/A | N/A
 | Number | Fibonacci | Fibonacci value of an input number. | N/A | N/A
 | Number | Is Prime | Check if an input number is a prime number. | N/A | N/A
