@@ -226,9 +226,17 @@ import contract /Users/travis/ProjectGit/rockacola/neo-smart-contract-examples/u
 
 #### High Priority
 
-* Add examples by split up `UtilContract`.
-* Once done above, sync to `master`.
 * Establish communication to seek for C# dev and Chinese translators.
+* Migrate https://github.com/CityOfZion/neo-boa/blob/master/boa_test/example/RangeTest.py
+* Migrate https://github.com/CityOfZion/neo-boa/blob/master/boa_test/example/OpCallTest.py
+* Migrate https://github.com/CityOfZion/neo-boa/blob/master/boa_test/example/BinopTest.py
+* Migrate https://github.com/CityOfZion/neo-boa/blob/master/boa_test/example/SliceTest.py
+  * Is it just for bytearray? can it be applied to string or array?
+* Migrate https://github.com/CityOfZion/neo-boa/blob/master/boa_test/example/blockchain/AccountTest.py
+* Migrate https://github.com/CityOfZion/neo-boa/blob/master/boa_test/example/blockchain/AppCallTest.py
+* Migrate https://github.com/CityOfZion/neo-boa/blob/master/boa_test/example/blockchain/DynamicAppCallTest.py
+* Migrate https://github.com/CityOfZion/neo-boa/blob/master/boa_test/example/blockchain/TransactionTypeTest.py
+* Migrate https://github.com/CityOfZion/neo-boa/blob/master/boa_test/example/blockchain/TriggerTypeTest.py
 
 #### Medium Priority
 
