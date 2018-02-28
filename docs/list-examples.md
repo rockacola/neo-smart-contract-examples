@@ -27,7 +27,7 @@ Code examples on writing smart contract for tackling specific problem.
 | Storage | Storage Echo | ... | N/A | N/A
 | Block | Current Height | Get current block height. | [Source](../examples/python/block/current-height.py) | N/A
 | Block | Current Timestamp | Get timestamp of current block. | [Source](../examples/python/block/current-timestamp.py) | N/A
-| Block | Block Timestamp | Get timestamp of a given block height. | N/A | N/A
+| Block | Block Timestamp | Get timestamp of a given block height. | [Source](../examples/python/block/block-timestamp.py) | N/A
 | Block | Block Merkle | Get merkle value of a given block height. | N/A | N/A
 | Block | Block Hash | Get hash of a given block height. | N/A | N/A
 | Block | Block Consensus | Get consensus value of a given block height. | N/A | N/A

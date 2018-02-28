@@ -21,7 +21,7 @@ from boa.blockchain.vm.Neo.Header import GetTimestamp, GetHash, GetNextConsensus
 
 def Main():
     """
-    :return: Current block timestamp.
+    :return: Current block timestamp
     :rtype: int
     """
     current_height = GetHeight()
