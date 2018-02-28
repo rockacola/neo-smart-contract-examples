@@ -22,7 +22,12 @@ You may also use the [official community chat](https://discord.gg/R8v48YA) and j
 
 This project is current under rapid developments a general guidelines are:
 
-### Python
+### Coding in General
+
+* Strictly no `tab` characters.
+* Do not commit `.avm` file.
+
+### Python Specific
 
 * Please follow the same comment format as seem in existing example.
 * Although not reinforced, you are recommended to follow [PEP 8] style guide.
@@ -31,13 +36,15 @@ This project is current under rapid developments a general guidelines are:
 * Usage of [PEP 484 Type Hints](https://www.python.org/dev/peps/pep-0484/) is allowed in use case contracts.
 * Each example contract must be in exactly 1 code file. This is not reinforced for use case contracts.
 
+### C# Specific
+
+* TBA
+
 ## Pull Request Process
 
 1. Update the `README.md` with details of changes to the interface, this includes new environment variables, exposed ports, useful file locations and container parameters.
 1. Pull requests are made against feature branches and the `master` branch.
 1. You may merge the Pull Request in once you have the sign-off of a developer on the project.
-
----
 
 ## Code of Conduct
 

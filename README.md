@@ -27,8 +27,8 @@ This project is urgently seeking for contributors of following categories:
 
 ## Documentation
 
-* [List of Smart Contract Examples](docs/list-examples.md)
-* [List of Smart Contract Use Cases](docs/list-use-cases.md)
+* ✍️ [List of Smart Contract Examples](docs/list-examples.md)
+* ✍️ [List of Smart Contract Use Cases](docs/list-use-cases.md)
 * [Contract Parameter Type Reference](docs/contract-parameter-type.md)
 
 ## External Resources
