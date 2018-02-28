@@ -9,7 +9,7 @@ Available on MainNet:       False
 
 Example:
     Test Invoke:            build /path/to/current-height.py test ff 02 False False
-    Expected Result:        [Variable]
+    Expected Result:        9415 (Variable)
     Operation Count:        25
     GAS Consumption:        0.026
 """

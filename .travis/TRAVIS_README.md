@@ -96,6 +96,22 @@ build /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/pyth
 import contract /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/array/array-sum.avm 10 02 False False
 ```
 
+#### Block
+
+##### Current Height
+
+``` py
+build /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/block/current-height.py test ff 02 False False
+import contract /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/block/current-height.avm ff 02 False False
+```
+
+##### Current Timestamp
+
+``` py
+build /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/block/current-timestamp.py test ff 02 False False
+import contract /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/block/current-timestamp.avm ff 02 False False
+```
+
 #### Account
 
 ##### Is Owner
