@@ -1,16 +1,17 @@
 """
-Date Created:                   2018-02-28
-Date Modified:                  2018-02-28
-Version:                        1
-Contract Hash:                  b461026b375e04c5aca7bbf7c335ddec8396e49b
-Available on NEO TestNet:       False
-Available on CoZ TestNet:       False
-Available on MainNet:           False
-Example Build Test Command:     build /path/to/square.py test 0505 02 False False 7
-Example Import Command:         import contract /path/to/square.avm 0505 02 False False
-Example Invoke:                 testinvoke b461026b375e04c5aca7bbf7c335ddec8396e49b 2 5
-Estimate Operation Count:       49
-Estimate GAS Consumption:       0.039
+Date Created:               2018-02-28
+Date Modified:              2018-02-28
+Version:                    1
+Contract Hash:              b461026b375e04c5aca7bbf7c335ddec8396e49b
+Available on NEO TestNet:   False
+Available on CoZ TestNet:   False
+Available on MainNet:       False
+
+Example:
+    Test Invoke:            build /path/to/square.py test 02 02 False False 7
+    Expected Result:        49
+    Operation Count:        49
+    GAS Consumption:        0.039
 """
 
 

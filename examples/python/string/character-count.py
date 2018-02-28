@@ -1,16 +1,17 @@
 """
-Date Created:                   2018-02-27
-Date Modified:                  2018-02-27
-Version:                        1
-Contract Hash:                  0a8b34b4097f0a472d5a31726d70ff807d37490d
-Available on NEO TestNet:       False
-Available on CoZ TestNet:       False
-Available on MainNet:           False
-Example Build Test Command:     build /path/to/character-count.py test 07 02 False False lorem
-Example Import Command:         import contract /path/to/character-count.avm 07 02 False False
-Example Invoke:                 testinvoke 0a8b34b4097f0a472d5a31726d70ff807d37490d 2 5
-Estimate Operation Count:       37
-Estimate GAS Consumption:       0.035
+Date Created:               2018-02-27
+Date Modified:              2018-02-27
+Version:                    1
+Contract Hash:              0a8b34b4097f0a472d5a31726d70ff807d37490d
+Available on NEO TestNet:   False
+Available on CoZ TestNet:   False
+Available on MainNet:       False
+
+Example:
+    Test Invoke:            build /path/to/character-count.py test 07 02 False False lorem
+    Expected Result:        5
+    Operation Count:        37
+    GAS Consumption:        0.035
 """
 
 

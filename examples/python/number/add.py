@@ -1,16 +1,17 @@
 """
-Date Created:                   2018-02-27
-Date Modified:                  2018-02-27
-Version:                        1
-Contract Hash:                  28dfdb9d1d0fa0b86804e4a4e0f0c42484f32792
-Available on NEO TestNet:       False
-Available on CoZ TestNet:       False
-Available on MainNet:           False
-Example Build Test Command:     build /path/to/add.py test 0505 02 False False 2 5
-Example Import Command:         import contract /path/to/add.avm 0505 02 False False
-Example Invoke:                 testinvoke 28dfdb9d1d0fa0b86804e4a4e0f0c42484f32792 2 5
-Estimate Operation Count:       11
-Estimate GAS Consumption:       0.016
+Date Created:               2018-02-27
+Date Modified:              2018-02-27
+Version:                    1
+Contract Hash:              28dfdb9d1d0fa0b86804e4a4e0f0c42484f32792
+Available on NEO TestNet:   False
+Available on CoZ TestNet:   False
+Available on MainNet:       False
+
+Example:
+    Test Invoke:            build /path/to/add.py test 0202 02 False False 2 5
+    Expected Result:        7
+    Operation Count:        11
+    GAS Consumption:        0.016
 """
 
 

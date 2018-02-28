@@ -1,16 +1,17 @@
 """
-Date Created:                   2018-02-27
-Date Modified:                  2018-02-27
-Version:                        1
-Contract Hash:                  d01b5d83dcecd6c6f19ac9c11c0a47588fe5abd7
-Available on NEO TestNet:       False
-Available on CoZ TestNet:       False
-Available on MainNet:           False
-Example Build Test Command:     build /path/to/forty-two.py test ff 02 False False
-Example Import Command:         import contract /path/to/forty-two.avm ff 02 False False
-Example Invoke:                 testinvoke d01b5d83dcecd6c6f19ac9c11c0a47588fe5abd7
-Estimate Operation Count:       49
-Estimate GAS Consumption:       0.044
+Date Created:               2018-02-27
+Date Modified:              2018-02-27
+Version:                    1
+Contract Hash:              d01b5d83dcecd6c6f19ac9c11c0a47588fe5abd7
+Available on NEO TestNet:   False
+Available on CoZ TestNet:   False
+Available on MainNet:       False
+
+Example:
+    Test Invoke:            build /path/to/forty-two.py test ff 02 False False
+    Expected Result:        42
+    Operation Count:        11
+    GAS Consumption:        0.016
 """
 
 

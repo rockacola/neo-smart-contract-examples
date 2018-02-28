@@ -40,3 +40,4 @@ Code examples on writing smart contract for tackling specific problem.
 | Blockchain | Dynamic App Call | ... | N/A | N/A
 | Validation | ... | ... | N/A | N/A
 | Random | ... | ... | N/A | N/A
+| Performance | Condition Positions | Demonstration on how position of condition statements effects GAS consumptions. | N/A | N/A

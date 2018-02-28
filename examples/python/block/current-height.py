@@ -1,16 +1,17 @@
 """
-Date Created:                   2018-02-27
-Date Modified:                  2018-02-27
-Version:                        1
-Contract Hash:                  69d771147507c1c44a7842624b5c47c0d03c359c
-Available on NEO TestNet:       False
-Available on CoZ TestNet:       False
-Available on MainNet:           False
-Example Build Test Command:     build /path/to/current-height.py test ff 02 False False
-Example Import Command:         import contract /path/to/current-height.avm ff 02 False False
-Example Invoke:                 testinvoke 69d771147507c1c44a7842624b5c47c0d03c359c
-Estimate Operation Count:       25
-Estimate GAS Consumption:       0.026
+Date Created:               2018-02-27
+Date Modified:              2018-02-27
+Version:                    1
+Contract Hash:              69d771147507c1c44a7842624b5c47c0d03c359c
+Available on NEO TestNet:   False
+Available on CoZ TestNet:   False
+Available on MainNet:       False
+
+Example:
+    Test Invoke:            build /path/to/current-height.py test ff 02 False False
+    Expected Result:        [Variable]
+    Operation Count:        25
+    GAS Consumption:        0.026
 """
 
 

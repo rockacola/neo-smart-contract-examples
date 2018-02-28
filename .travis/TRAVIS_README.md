@@ -32,22 +32,22 @@ import contract /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/exa
 ##### Add
 
 ``` py
-build /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/number/add.py test 0505 02 False False 2 5
-import contract /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/number/add.avm 0505 02 False False
+build /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/number/add.py test 0202 02 False False 2 5
+import contract /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/number/add.avm 0202 02 False False
 ```
 
 ##### Multiply
 
 ``` py
-build /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/number/multiply.py test 0505 02 False False 2 5
-import contract /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/number/multiply.avm 0505 02 False False
+build /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/number/multiply.py test 0202 02 False False 2 5
+import contract /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/number/multiply.avm 0202 02 False False
 ```
 
 ##### Square
 
 ``` py
-build /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/number/square.py test 0505 02 False False 7
-import contract /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/number/square.avm 0505 02 False False
+build /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/number/square.py test 0202 02 False False 7
+import contract /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/number/square.avm 0202 02 False False
 ```
 
 #### String
@@ -67,6 +67,20 @@ import contract /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/exa
 build /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/array/array-length.py test 10 02 False False [True,'two',3]
 import contract /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/array/array-length.avm 10 02 False False
 ```
+
+#### Account
+
+##### Is Owner
+
+``` py
+build /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/account/is-owner.py test ff 01 False False
+import contract /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/account/is-owner.avm ff 01 False False
+```
+
+
+---
+
+
 
 ### From `travis` workstation
 

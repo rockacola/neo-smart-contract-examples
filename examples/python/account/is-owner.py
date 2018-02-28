@@ -1,16 +1,17 @@
 """
-Date Created:                   2018-02-27
-Date Modified:                  2018-02-27
-Version:                        1
-Contract Hash:                  b6906e1806a9d9c49de12a192bcb55b77ecae840
-Available on NEO TestNet:       False
-Available on CoZ TestNet:       False
-Available on MainNet:           False
-Example Build Test Command:     build /path/to/is-owner.py test ff 01 False False
-Example Import Command:         import contract /path/to/is-owner.avm ff 01 False False
-Example Invoke:                 testinvoke b6906e1806a9d9c49de12a192bcb55b77ecae840 2 5
-Estimate Operation Count:       45
-Estimate GAS Consumption:       0.239
+Date Created:               2018-02-27
+Date Modified:              2018-02-27
+Version:                    1
+Contract Hash:              b6906e1806a9d9c49de12a192bcb55b77ecae840
+Available on NEO TestNet:   False
+Available on CoZ TestNet:   False
+Available on MainNet:       False
+
+Example:
+    Test Invoke:            build /path/to/is-owner.py test ff 01 False False
+    Expected Result:        False
+    Operation Count:        45
+    GAS Consumption:        0.239
 """
 
 
