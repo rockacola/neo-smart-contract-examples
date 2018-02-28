@@ -19,7 +19,7 @@ def Main(a, b):
     :param a: First input number of concern
     :param b: Second input number of concern
     :type a: int
-    :type a: int
+    :type b: int
     :return: Multiplication of the 2 input numbers
     :rtype: int
     """
