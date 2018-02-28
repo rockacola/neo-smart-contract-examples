@@ -120,6 +120,14 @@ build /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/pyth
 import contract /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/block/block-timestamp.avm 02 02 False False
 ```
 
+##### Block Merkle
+
+``` py
+build /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/block/block-merkle.py test 02 02 False False 1
+import contract /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/block/block-merkle.avm 02 02 False False
+```
+
+
 #### Account
 
 ##### Is Owner
