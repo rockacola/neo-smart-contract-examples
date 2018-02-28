@@ -7,15 +7,15 @@ Available on NEO TestNet:   False
 Available on CoZ TestNet:   False
 Available on MainNet:       False
 
-Example: (return as integer)
-    Test Invoke:            build /path/to/block-merkle.py test 02 02 False False 1
-    Expected Result:        16554090520483099625892320194318787314436399351031916891542174392554652484447
-    Operation Count:        53
-    GAS Consumption:        0.144
-
 Example: (return as bytearray)
     Test Invoke:            build /path/to/block-merkle.py test 02 07 False False 1
     Expected Result:        bytearray(b'_\xc3 \xe8\xcc\xbf50_\xdb\x93\xa3\x01\x87Y\x88\xba&\x9e\x17\xad\x80\xc9\xfa\xd0\xf6\xaf\xc6\x7fH\x99$')
+    Operation Count:        53
+    GAS Consumption:        0.144
+
+Example: (return as integer)
+    Test Invoke:            build /path/to/block-merkle.py test 02 02 False False 1
+    Expected Result:        16554090520483099625892320194318787314436399351031916891542174392554652484447
     Operation Count:        53
     GAS Consumption:        0.144
 
@@ -32,8 +32,8 @@ def Main(height):
     """
     :param height: The input block height
     :type height: int
-    :return: Block timestamp of the input block height
-    :rtype: int
+    :return: Block merkle value of the input block height
+    :rtype: bytearray
     """
     header = GetHeader(height)
     merkle = GetMerkleRoot(header)

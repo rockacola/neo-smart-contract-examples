@@ -29,7 +29,7 @@ Code examples on writing smart contract for tackling specific problem.
 | Block | Current Timestamp | Get timestamp of current block. | [Source](../examples/python/block/current-timestamp.py) | N/A
 | Block | Block Timestamp | Get timestamp of a given block height. | [Source](../examples/python/block/block-timestamp.py) | N/A
 | Block | Block Merkle | Get merkle value of a given block height. | [Source](../examples/python/block/block-merkle.py) | N/A
-| Block | Block Hash | Get hash of a given block height. | N/A | N/A
+| Block | Block Hash | Get hash of a given block height. | [Source](../examples/python/block/block-hash.py) | N/A
 | Block | Block Consensus | Get consensus value of a given block height. | N/A | N/A
 | Block | Next Consensus | Get next consensus value of a given block height. | N/A | N/A
 | Account | My Address | Get contract invoker's address. | N/A | N/A
