@@ -2,7 +2,7 @@
 Date Created:               2018-02-28
 Date Modified:              2018-02-28
 Version:                    1
-Contract Hash:              TBA
+Contract Hash:              b6c8ab8ca45c240d7b4a965ecaa5d85eb1439aae
 Available on NEO TestNet:   False
 Available on CoZ TestNet:   False
 Available on MainNet:       False
