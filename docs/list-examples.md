@@ -13,7 +13,7 @@ Code examples on writing smart contract for tackling specific problem.
 | Number | Multiply | Multiply 2 input numbers together. | [Source](../examples/python/number/multiply.py) | N/A
 | Number | Square | Returns square of an input number. | [Source](../examples/python/number/square.py) | N/A
 | Number | Power | Base to the exponent power of input numbers. | N/A | N/A
-| Number | Fibonacci | Fibonacci value of an input number. | N/A | N/A
+| Number | Fibonacci | Fibonacci value of an input number. | [Source](../examples/python/number/fibonacci.py) | N/A
 | Number | Is Prime | Check if an input number is a prime number. | N/A | N/A
 | String | Character Count | Count number of characters of an input string. | [Source](../examples/python/string/character-count.py) | N/A
 | String | String Reverse | Provide reverse order of input string. | N/A | N/A

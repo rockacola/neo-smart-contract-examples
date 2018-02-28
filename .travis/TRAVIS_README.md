@@ -46,9 +46,17 @@ import contract /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/exa
 ##### Square
 
 ``` py
-build /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/number/square.py test 0202 02 False False 7
-import contract /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/number/square.avm 0202 02 False False
+build /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/number/square.py test 02 02 False False 7
+import contract /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/number/square.avm 02 02 False False
 ```
+
+##### Fibonnaci
+
+``` py
+build /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/number/fibonacci.py test 02 02 False False 3
+import contract /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/number/fibonacci.avm 02 02 False False
+```
+
 
 #### String
 
