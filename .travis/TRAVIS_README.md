@@ -50,13 +50,19 @@ build /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/pyth
 import contract /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/number/square.avm 02 02 False False
 ```
 
+##### Power
+
+``` py
+build /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/number/power.py test 0202 02 False False 2 8
+import contract /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/number/power.avm 0202 02 False False
+```
+
 ##### Fibonnaci
 
 ``` py
 build /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/number/fibonacci.py test 02 02 False False 3
 import contract /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/number/fibonacci.avm 02 02 False False
 ```
-
 
 #### String
 

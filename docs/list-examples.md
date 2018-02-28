@@ -12,7 +12,7 @@ Code examples on writing smart contract for tackling specific problem.
 | Number | Add | Sum 2 input numbers together. | [Source](../examples/python/number/add.py) | N/A
 | Number | Multiply | Multiply 2 input numbers together. | [Source](../examples/python/number/multiply.py) | N/A
 | Number | Square | Returns square of an input number. | [Source](../examples/python/number/square.py) | N/A
-| Number | Power | Base to the exponent power of input numbers. | N/A | N/A
+| Number | Power | Base to the exponent power of input numbers. | [Source](../examples/python/number/power.py) | N/A
 | Number | Fibonacci | Fibonacci value of an input number. | [Source](../examples/python/number/fibonacci.py) | N/A
 | Number | Is Prime | Check if an input number is a prime number. | N/A | N/A
 | String | Character Count | Count number of characters of an input string. | [Source](../examples/python/string/character-count.py) | N/A
@@ -41,3 +41,4 @@ Code examples on writing smart contract for tackling specific problem.
 | Validation | ... | ... | N/A | N/A
 | Random | ... | ... | N/A | N/A
 | Performance | Condition Positions | Demonstration on how position of condition statements effects GAS consumptions. | N/A | N/A
+| Performance | Recursive vs Iterator | Demonstration on GAS consumptions efficiencies of same logic implemented with loop vs recursion. | N/A | N/A
