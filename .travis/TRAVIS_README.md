@@ -73,6 +73,13 @@ build /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/pyth
 import contract /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/string/character-count.avm 07 02 False False
 ```
 
+##### String Reverse
+
+``` py
+build /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/string/string-reverse.py test 07 07 False False lorem
+import contract /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/string/string-reverse.avm 07 07 False False
+```
+
 #### Array
 
 ##### Array Length

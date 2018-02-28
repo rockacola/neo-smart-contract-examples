@@ -18,7 +18,7 @@ Example:
 def Main(text):
     """
     :param text: Input string of concern
-    :type a: str
+    :type text: str
     :return: Character count of the input string
     :rtype: int
     """

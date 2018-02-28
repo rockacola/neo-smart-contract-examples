@@ -16,7 +16,7 @@ Code examples on writing smart contract for tackling specific problem.
 | Number | Fibonacci | Fibonacci value of an input number. | [Source](../examples/python/number/fibonacci.py) | N/A
 | Number | Is Prime | Check if an input number is a prime number. | N/A | N/A
 | String | Character Count | Count number of characters of an input string. | [Source](../examples/python/string/character-count.py) | N/A
-| String | String Reverse | Provide reverse order of input string. | N/A | N/A
+| String | String Reverse | Provide reverse order of input string. | [Source](../examples/python/string/string-reverse.py) | N/A
 | String | String Explode | Split a string into an array with specified separator string. | N/A | N/A
 | Array | Array Length | Get item count of an input array. | [Source](../examples/python/array/array-length.py) | N/A
 | Array | Array Sum | Sum all numbers together from an input number array. | N/A | N/A
