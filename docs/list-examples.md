@@ -19,7 +19,7 @@ Code examples on writing smart contract for tackling specific problem.
 | String | String Reverse | Provide reverse order of input string. | [Source](../examples/python/string/string-reverse.py) | N/A
 | String | String Explode | Split a string into an array with specified separator string. | N/A | N/A
 | Array | Array Length | Get item count of an input array. | [Source](../examples/python/array/array-length.py) | N/A
-| Array | Array Sum | Sum all numbers together from an input number array. | N/A | N/A
+| Array | Array Sum | Sum all numbers together from an input number array. | [Source](../examples/python/array/array-sum.py) | N/A
 | Array | Array Reverse | Provide reverse order of input array. | N/A | N/A
 | Array | Array Implode | Concatenate array items into string with specified separator string. | N/A | N/A
 | Bytes | ... | ... | N/A | N/A

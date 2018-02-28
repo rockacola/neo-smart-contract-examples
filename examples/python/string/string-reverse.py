@@ -1,6 +1,6 @@
 """
-Date Created:               2018-02-27
-Date Modified:              2018-02-27
+Date Created:               2018-02-28
+Date Modified:              2018-02-28
 Version:                    1
 Contract Hash:              3eb1b3eef48650101b56b4048cbfe269debf9ce0
 Available on NEO TestNet:   False

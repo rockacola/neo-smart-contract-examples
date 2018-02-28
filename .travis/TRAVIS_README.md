@@ -89,6 +89,13 @@ build /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/pyth
 import contract /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/array/array-length.avm 10 02 False False
 ```
 
+##### Array Sum
+
+``` py
+build /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/array/array-sum.py test 10 02 False False [2,4,6]
+import contract /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/array/array-sum.avm 10 02 False False
+```
+
 #### Account
 
 ##### Is Owner
