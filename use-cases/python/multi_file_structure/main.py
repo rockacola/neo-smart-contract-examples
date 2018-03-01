@@ -2,34 +2,26 @@
 Date Created:               2018-03-01
 Date Modified:              2018-03-01
 Version:                    1
-Contract Hash:              TBA
+Contract Hash:              d9fd25d4fdc11f0816325f58a95c8c41c382b9b1
 Available on NEO TestNet:   False
 Available on CoZ TestNet:   False
 Available on MainNet:       False
 
 Example:
     Test Invoke:            build /path/to/main.py test 0710 05 False False version
-    Expected Result:        TBA
-    Operation Count:        TBA
-    GAS Consumption:        TBA
+    Expected Result:        b'\x02'
+    Operation Count:        100
+    GAS Consumption:        0.077
 """
 
 
-from boa.blockchain.vm.System.ExecutionEngine import GetScriptContainer, GetExecutingScriptHash
-from boa.blockchain.vm.Neo.Transaction import *
-from boa.blockchain.vm.Neo.Runtime import Log, Notify, GetTrigger, CheckWitness
-from boa.blockchain.vm.Neo.Blockchain import GetHeight, GetHeader
-from boa.blockchain.vm.Neo.Header import GetMerkleRoot, GetTimestamp, GetHash, GetVersion, GetConsensusData, GetNextConsensus
-from boa.blockchain.vm.Neo.Action import RegisterAction
-from boa.blockchain.vm.Neo.TriggerType import Application, Verification
-from boa.blockchain.vm.Neo.Storage import GetContext, Get, Put, Delete
-from boa.blockchain.vm.Neo.Output import GetScriptHash, GetValue, GetAssetId
-from boa.code.builtins import concat, list, range, take, substr
+from boa.blockchain.vm.Neo.Runtime import Notify
 from pkg.helpers.math_helper import MathHelper
+from pkg.settings.config import Config
 
 
 # Global
-VERSION = 1
+VERSION = 2
 
 
 def Main(operation: str, args: list) -> bytearray:
@@ -43,7 +35,7 @@ def Main(operation: str, args: list) -> bytearray:
     if operation == 'add':
         result = do_add(args)
         return result
-    Log('unknown operation')
+    Notify('unknown operation')
     return False
 
 
@@ -55,7 +47,7 @@ def do_version() -> int:
 
 
 def do_magic_word() -> str:
-    result = 'magic!'
+    result = Config.MagicWord()
     return result
 
 
