@@ -27,6 +27,10 @@ VERSION = 4
 
 def Main(operation: str, args: list) -> bytearray:
     # Purpose of this contract is to demonstrate possible multi file structure. Hence there will be no documentations on its implementations.
+    """
+    Note:
+        - Usage of static methods or properties are discouraged, due to unconventional syntax. You'll have better luck to instantiate classes when needed.
+    """
     if operation == 'version':
         result = do_version()
         return result
@@ -36,28 +40,29 @@ def Main(operation: str, args: list) -> bytearray:
     if operation == 'add':
         result = do_add(args)
         return result
-    Notify(ErrorResponse.UnknownOperation())
+    err = ErrorResponse()
+    Notify(err.unknown_operation)
     return False
 
 
-def do_version() -> int:
+def do_version() -> bytearray:
     version = VERSION
     Notify('version:')
     Notify(version)
     return version
 
 
-def do_magic_word() -> str:
+def do_magic_word() -> bytearray:
     config = Config()
     result = config.magic_word
     return result
 
 
-def do_add(args: list) -> int:
+def do_add(args: list) -> bytearray:
     if len(args) > 1:
         n1 = args[0]
         n2 = args[1]
         result = MathHelper.Add(n1, n2)
         return result
-    Notify(ErrorResponse.InvalidArgsLength())
-    return False
+    err = ErrorResponse()
+    return err.invalid_args_length
