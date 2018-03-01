@@ -23,8 +23,8 @@
 ##### 42
 
 ``` py
-build /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/constant/forty-two.py test ff 02 False False
-import contract /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/constant/forty-two.avm ff 02 False False
+build /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/constant/forty_two.py test ff 02 False False
+import contract /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/constant/forty_two.avm ff 02 False False
 ```
 
 #### Number
@@ -69,15 +69,15 @@ import contract /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/exa
 ##### Character Count
 
 ``` py
-build /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/string/character-count.py test 07 02 False False lorem
-import contract /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/string/character-count.avm 07 02 False False
+build /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/string/character_count.py test 07 02 False False lorem
+import contract /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/string/character_count.avm 07 02 False False
 ```
 
 ##### String Reverse
 
 ``` py
-build /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/string/string-reverse.py test 07 07 False False lorem
-import contract /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/string/string-reverse.avm 07 07 False False
+build /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/string/string_reverse.py test 07 07 False False lorem
+import contract /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/string/string_reverse.avm 07 07 False False
 ```
 
 #### Array
@@ -85,15 +85,15 @@ import contract /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/exa
 ##### Array Length
 
 ``` py
-build /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/array/array-length.py test 10 02 False False [True,'two',3]
-import contract /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/array/array-length.avm 10 02 False False
+build /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/array/array_length.py test 10 02 False False [True,'two',3]
+import contract /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/array/array_length.avm 10 02 False False
 ```
 
 ##### Array Sum
 
 ``` py
-build /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/array/array-sum.py test 10 02 False False [2,4,6]
-import contract /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/array/array-sum.avm 10 02 False False
+build /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/array/array_sum.py test 10 02 False False [2,4,6]
+import contract /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/array/array_sum.avm 10 02 False False
 ```
 
 #### Encode
@@ -110,51 +110,51 @@ import contract /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/exa
 ##### Current Height
 
 ``` py
-build /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/block/current-height.py test ff 02 False False
-import contract /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/block/current-height.avm ff 02 False False
+build /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/block/current_height.py test ff 02 False False
+import contract /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/block/current_height.avm ff 02 False False
 ```
 
 ##### Current Timestamp
 
 ``` py
-build /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/block/current-timestamp.py test ff 02 False False
-import contract /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/block/current-timestamp.avm ff 02 False False
+build /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/block/current_timestamp.py test ff 02 False False
+import contract /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/block/current_timestamp.avm ff 02 False False
 ```
 
 
 ##### Block Timestamp
 
 ``` py
-build /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/block/block-timestamp.py test 02 02 False False 1
-import contract /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/block/block-timestamp.avm 02 02 False False
+build /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/block/block_timestamp.py test 02 02 False False 1
+import contract /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/block/block_timestamp.avm 02 02 False False
 ```
 
 ##### Block Merkle Root
 
 ``` py
-build /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/block/block-merkle-root.py test 02 02 False False 1
-import contract /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/block/block-merkle-root.avm 02 02 False False
+build /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/block/block_merkle-root.py test 02 02 False False 1
+import contract /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/block/block_merkle-root.avm 02 02 False False
 ```
 
 ##### Block Hash
 
 ``` py
-build /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/block/block-hash.py test 02 02 False False 1
-import contract /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/block/block-hash.avm 02 02 False False
+build /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/block/block_hash.py test 02 02 False False 1
+import contract /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/block/block_hash.avm 02 02 False False
 ```
 
 ##### Block Consensus
 
 ``` py
-build /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/block/block-consensus.py test 02 02 False False 1
-import contract /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/block/block-consensus.avm 02 02 False False
+build /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/block/block_consensus.py test 02 02 False False 1
+import contract /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/block/block_consensus.avm 02 02 False False
 ```
 
 ##### Next Consensus
 
 ``` py
-build /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/block/next-consensus.py test 02 02 False False 1
-import contract /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/block/next-consensus.avm 02 02 False False
+build /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/block/next_consensus.py test 02 02 False False 1
+import contract /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/block/next_consensus.avm 02 02 False False
 ```
 
 #### Account
@@ -162,8 +162,8 @@ import contract /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/exa
 ##### Is Owner
 
 ``` py
-build /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/account/is-owner.py test ff 01 False False
-import contract /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/account/is-owner.avm ff 01 False False
+build /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/account/is_owner.py test ff 01 False False
+import contract /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/account/is_owner.avm ff 01 False False
 ```
 
 #### Use Cases
@@ -232,8 +232,8 @@ import contract /Users/travis/ProjectGit/rockacola/neo-smart-contract-examples/e
 ##### Current Height
 
 ``` py
-build /Users/travis/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/block/current-height.py test ff 02 False False
-import contract /Users/travis/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/block/current-height.avm ff 02 False False
+build /Users/travis/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/block/current_height.py test ff 02 False False
+import contract /Users/travis/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/block/current_height.avm ff 02 False False
 ```
 
 #### Account
@@ -241,8 +241,8 @@ import contract /Users/travis/ProjectGit/rockacola/neo-smart-contract-examples/e
 ##### Is Owner
 
 ``` py
-build /Users/travis/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/account/is-owner.py test ff 01 False False
-import contract /Users/travis/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/account/is-owner.avm ff 01 False False
+build /Users/travis/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/account/is_owner.py test ff 01 False False
+import contract /Users/travis/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/account/is_owner.avm ff 01 False False
 ```
 
 #### Use Cases
@@ -250,25 +250,25 @@ import contract /Users/travis/ProjectGit/rockacola/neo-smart-contract-examples/e
 ##### Functional Utilities
 
 ``` py
-build /Users/travis/ProjectGit/rockacola/neo-smart-contract-examples/use-cases/python/functional-utilities/functional-utilities.py test 0710 05 False False version
-build /Users/travis/ProjectGit/rockacola/neo-smart-contract-examples/use-cases/python/functional-utilities/functional-utilities.py test 0710 05 False False add [2,5]
-build /Users/travis/ProjectGit/rockacola/neo-smart-contract-examples/use-cases/python/functional-utilities/functional-utilities.py test 0710 05 False False multiply [7,6]
-build /Users/travis/ProjectGit/rockacola/neo-smart-contract-examples/use-cases/python/functional-utilities/functional-utilities.py test 0710 05 False False square [6]
-build /Users/travis/ProjectGit/rockacola/neo-smart-contract-examples/use-cases/python/functional-utilities/functional-utilities.py test 0710 05 False False power [2,8]
-build /Users/travis/ProjectGit/rockacola/neo-smart-contract-examples/use-cases/python/functional-utilities/functional-utilities.py test 0710 05 False False fibonacci [7]
-build /Users/travis/ProjectGit/rockacola/neo-smart-contract-examples/use-cases/python/functional-utilities/functional-utilities.py test 0710 05 False False character_count ['lorem']
-build /Users/travis/ProjectGit/rockacola/neo-smart-contract-examples/use-cases/python/functional-utilities/functional-utilities.py test 0710 05 False False string_reverse ['lorem']
-build /Users/travis/ProjectGit/rockacola/neo-smart-contract-examples/use-cases/python/functional-utilities/functional-utilities.py test 0710 05 False False array_length [1,2,3]
-build /Users/travis/ProjectGit/rockacola/neo-smart-contract-examples/use-cases/python/functional-utilities/functional-utilities.py test 0710 05 False False array_sum [1,2,3]
-build /Users/travis/ProjectGit/rockacola/neo-smart-contract-examples/use-cases/python/functional-utilities/functional-utilities.py test 0710 05 False False current_height []
-build /Users/travis/ProjectGit/rockacola/neo-smart-contract-examples/use-cases/python/functional-utilities/functional-utilities.py test 0710 05 False False current_timestamp []
-build /Users/travis/ProjectGit/rockacola/neo-smart-contract-examples/use-cases/python/functional-utilities/functional-utilities.py test 0710 05 False False get_timestamp [1]
-build /Users/travis/ProjectGit/rockacola/neo-smart-contract-examples/use-cases/python/functional-utilities/functional-utilities.py test 0710 05 False False get_merkle_root [1]
-build /Users/travis/ProjectGit/rockacola/neo-smart-contract-examples/use-cases/python/functional-utilities/functional-utilities.py test 0710 05 False False get_block_hash [1]
-build /Users/travis/ProjectGit/rockacola/neo-smart-contract-examples/use-cases/python/functional-utilities/functional-utilities.py test 0710 05 False False get_consensus [1]
-build /Users/travis/ProjectGit/rockacola/neo-smart-contract-examples/use-cases/python/functional-utilities/functional-utilities.py test 0710 05 False False get_next_consensus [1]
+build /Users/travis/ProjectGit/rockacola/neo-smart-contract-examples/use-cases/python/functional_utilities/functional_utilities.py test 0710 05 False False version
+build /Users/travis/ProjectGit/rockacola/neo-smart-contract-examples/use-cases/python/functional_utilities/functional_utilities.py test 0710 05 False False add [2,5]
+build /Users/travis/ProjectGit/rockacola/neo-smart-contract-examples/use-cases/python/functional_utilities/functional_utilities.py test 0710 05 False False multiply [7,6]
+build /Users/travis/ProjectGit/rockacola/neo-smart-contract-examples/use-cases/python/functional_utilities/functional_utilities.py test 0710 05 False False square [6]
+build /Users/travis/ProjectGit/rockacola/neo-smart-contract-examples/use-cases/python/functional_utilities/functional_utilities.py test 0710 05 False False power [2,8]
+build /Users/travis/ProjectGit/rockacola/neo-smart-contract-examples/use-cases/python/functional_utilities/functional_utilities.py test 0710 05 False False fibonacci [7]
+build /Users/travis/ProjectGit/rockacola/neo-smart-contract-examples/use-cases/python/functional_utilities/functional_utilities.py test 0710 05 False False character_count ['lorem']
+build /Users/travis/ProjectGit/rockacola/neo-smart-contract-examples/use-cases/python/functional_utilities/functional_utilities.py test 0710 05 False False string_reverse ['lorem']
+build /Users/travis/ProjectGit/rockacola/neo-smart-contract-examples/use-cases/python/functional_utilities/functional_utilities.py test 0710 05 False False array_length [1,2,3]
+build /Users/travis/ProjectGit/rockacola/neo-smart-contract-examples/use-cases/python/functional_utilities/functional_utilities.py test 0710 05 False False array_sum [1,2,3]
+build /Users/travis/ProjectGit/rockacola/neo-smart-contract-examples/use-cases/python/functional_utilities/functional_utilities.py test 0710 05 False False current_height []
+build /Users/travis/ProjectGit/rockacola/neo-smart-contract-examples/use-cases/python/functional_utilities/functional_utilities.py test 0710 05 False False current_timestamp []
+build /Users/travis/ProjectGit/rockacola/neo-smart-contract-examples/use-cases/python/functional_utilities/functional_utilities.py test 0710 05 False False get_timestamp [1]
+build /Users/travis/ProjectGit/rockacola/neo-smart-contract-examples/use-cases/python/functional_utilities/functional_utilities.py test 0710 05 False False get_merkle_root [1]
+build /Users/travis/ProjectGit/rockacola/neo-smart-contract-examples/use-cases/python/functional_utilities/functional_utilities.py test 0710 05 False False get_block_hash [1]
+build /Users/travis/ProjectGit/rockacola/neo-smart-contract-examples/use-cases/python/functional_utilities/functional_utilities.py test 0710 05 False False get_consensus [1]
+build /Users/travis/ProjectGit/rockacola/neo-smart-contract-examples/use-cases/python/functional_utilities/functional_utilities.py test 0710 05 False False get_next_consensus [1]
 
-import contract /Users/travis/ProjectGit/rockacola/neo-smart-contract-examples/use-cases/python/functional-utilities/functional-utilities.avm 0710 05 False False
+import contract /Users/travis/ProjectGit/rockacola/neo-smart-contract-examples/use-cases/python/functional_utilities/functional_utilities.avm 0710 05 False False
 ```
 
 
