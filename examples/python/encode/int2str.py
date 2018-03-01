@@ -33,19 +33,19 @@ def Main(num):
 
 
 def int2str(num):
-    digitTexts = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+    digits = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
     result = ''
     firstRun = True
 
     while num > 0:
         remainder = num % 10
         num = num / 10
-        digitText = digitTexts[remainder]
+        digit = digits[remainder]
 
         if firstRun:
-            result = digitText
+            result = digit
             firstRun = False
         else:
-            result = concat(digitText, result)
+            result = concat(digit, result)
 
     return result
