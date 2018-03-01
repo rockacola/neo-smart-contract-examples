@@ -2,7 +2,7 @@
 Date Created:               2018-03-01
 Date Modified:              2018-03-02
 Version:                    4
-Contract Hash:              ee4fc9a20e7b413a9fc830453a8a6a278f7590e5
+Contract Hash:              f31fef19465e16caa6e5dc8beab99a6a628e2f72
 Available on NEO TestNet:   False
 Available on CoZ TestNet:   False
 Available on MainNet:       False
