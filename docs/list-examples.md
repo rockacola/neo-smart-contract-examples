@@ -55,7 +55,7 @@ Code examples on writing smart contract for tackling specific problem.
 | Block | Block Transaction | ... | N/A | N/A
 | Account | My Address | Get contract invoker's address. | N/A | N/A
 | Account | Target Address | Get contract target's address. | N/A | N/A
-| Account | Is Owner | Check if invoker's address matches a static address. | [Source](../examples/python/account/is-owner.py) | N/A
+| Account | Is Owner | Check if invoker's address matches a static address. | [Source](../examples/python/account/is_owner.py) | N/A
 | Account | Is Address | Check if invoker's address matches an input address. | N/A | N/A
 | Account | Is Address (Witness) | Check if invoker's address matches an input address through `CheckWitness` method. | N/A | N/A
 | Account | Get Hash | ... | N/A | N/A
