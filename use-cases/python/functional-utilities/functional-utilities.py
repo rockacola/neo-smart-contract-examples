@@ -1,17 +1,17 @@
 """
 Date Created:                   2018-02-05
-Date Modified:                  2018-02-27
-Version:                        10
-Contract Hash:                  0f9e32078d36d73a198fbf3f62bdb1c997b7ee3f
+Date Modified:                  2018-03-01
+Version:                        11
+Contract Hash:                  830629f06d252ff7a3b38016df5e88426f596000
 Available on NEO TestNet:       False
 Available on CoZ TestNet:       False
 Available on MainNet:           False
-Example Build Test Command:     build /path/to/functional-utilities.py test 0710 05 False False
-Example Import Command:         import contract /path/to/functional-utilities.avm 0710 05 False False
-Example Invoke:                 testinvoke 0f9e32078d36d73a198fbf3f62bdb1c997b7ee3f
 
-Todo:
-    - Byte operations: https://github.com/CityOfZion/neo-boa/blob/development/boa_test/example/BinopTest.py
+Example:
+    Test Invoke:            build /path/to/functional-utilities.py test 0710 05 False False version
+    Expected Result:        b'\n'
+    Operation Count:        100
+    GAS Consumption:        0.077
 """
 
 
@@ -83,8 +83,8 @@ def Main(operation: str, args: list) -> bytearray:
     elif operation == 'get_timestamp':      # Get timestamp of specified block height
         result = do_get_timestamp(args)
         return result
-    elif operation == 'get_merkle':         # Get merkle value of specified block height
-        result = do_get_merkle(args)
+    elif operation == 'get_merkle_root':    # Get merkle root of specified block height
+        result = do_get_merkle_root(args)
         return result
     elif operation == 'get_block_hash':     # Get hash of specified block height
         result = do_get_block_hash(args)
@@ -247,8 +247,8 @@ def do_get_timestamp(args: list) -> bytearray:
     return False
 
 
-def do_get_merkle(args: list) -> bytearray:
-    Log('do_get_merkle triggered.')
+def do_get_merkle_root(args: list) -> bytearray:
+    Log('do_get_merkle_root triggered.')
     if len(args) > 0:
         height = args[0]
         Log('height:')
@@ -257,10 +257,10 @@ def do_get_merkle(args: list) -> bytearray:
         version = GetVersion(header)
         Log('version:')
         Log(version)
-        merkle = GetMerkleRoot(header)
-        Log('merkle:')
-        Log(merkle)
-        return merkle
+        merkle_root = GetMerkleRoot(header)
+        Log('merkle_root:')
+        Log(merkle_root)
+        return merkle_root
     Notify('invalid argument length')
     return False
 

@@ -45,7 +45,7 @@ Code examples on writing smart contract for tackling specific problem.
 | Block | Block Timestamp | Get timestamp of a given block height. | [Source](../examples/python/block/block-timestamp.py) | N/A
 | Block | Block Index | ... | N/A | N/A
 | Block | Block Version | ... | N/A | N/A
-| Block | Block Merkle | Get merkle value of a given block height. | [Source](../examples/python/block/block-merkle.py) | N/A
+| Block | Block Merkle Root | Get merkle root of a given block height. | [Source](../examples/python/block/block-merkle-root.py) | N/A
 | Block | Block Previous Hash | ... | N/A | N/A
 | Block | Block Hash | Get hash of a given block height. | [Source](../examples/python/block/block-hash.py) | N/A
 | Block | Block Consensus | Get consensus value of a given block height. | [Source](../examples/python/block/block-consensus.py) | N/A
