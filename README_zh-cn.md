@@ -6,16 +6,16 @@
 </p>
 
 <p align="center" style="font-size: 32px;">
-  <h1 align="center">NEO Smart Contract Examples</h1>
+  <h1 align="center">[REPO NAME]</h1>
 </p>
 
 <p align="center">
-  Collection of well documented examples to get started with smart contract development in NEO blockchain.
+  [REPO INTRODUCTION]
 </p>
 
 <p align="center">
-  <a href="#en"><strong>English</strong></a> /
-  <a href="#cn"><strong>中文</strong></a>
+  <a href="README.md"><strong>English</strong></a> /
+  <a href="README_zh-cn.md"><strong>中文</strong></a>
 </p>
 
 ## Overview
