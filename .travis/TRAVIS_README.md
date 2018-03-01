@@ -96,6 +96,15 @@ build /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/pyth
 import contract /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/array/array-sum.avm 10 02 False False
 ```
 
+#### Encode
+
+##### Int to Str
+
+``` py
+build /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/encode/int2str.py test 02 05 False False 12
+import contract /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/encode/int2str.avm 02 05 False False
+```
+
 #### Block
 
 ##### Current Height

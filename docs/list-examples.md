@@ -34,7 +34,7 @@ Code examples on writing smart contract for tackling specific problem.
 | Array | Range | ... | N/A | N/A
 | Iterator | While Breaker | ... | N/A | N/A
 | Bytes | ... | ... | N/A | N/A
-| Encode | Integer to String | Convert input number to string format. | N/A | N/A
+| Encode | Integer to String | Convert input number to string format. | [Source](../examples/python/encode/int2str.py) | N/A
 | Encode | SHA1 | ... | N/A | N/A
 | Encode | SHA256 | ... | N/A | N/A
 | Encode | HASH160 | ... | N/A | N/A
