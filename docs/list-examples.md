@@ -4,7 +4,7 @@ Code examples on writing smart contract for tackling specific problem.
 
 | Category | Name | Description | Python | C#
 | --- | --- | --- | --- | ---
-| Constant | Forty Two | Returns `42`, that's it. | [Source](../examples/python/constant/forty-two.py) | N/A
+| Constant | Forty Two | Returns `42`, that's it. | [Source](../examples/python/constant/forty_two.py) | N/A
 | Constant | Local Variable | Returns string value of a local constant. | N/A | N/A
 | Constant | Global Variable | Returns integer value of a global constant. | N/A | N/A
 | Constant | Global Variable 2 | Returns bytes value of a global constant. | N/A | N/A
@@ -18,12 +18,12 @@ Code examples on writing smart contract for tackling specific problem.
 | Number | Minimum | Find the smallest of 2 input numbers. | N/A | N/A
 | Number | Maximum | Find the biggest of 2 input numbers. | N/A | N/A
 | Number | Absolute | Get the absolute value of an input number. | N/A | N/A
-| String | Character Count | Count number of characters of an input string. | [Source](../examples/python/string/character-count.py) | N/A
-| String | String Reverse | Provide reverse order of input string. | [Source](../examples/python/string/string-reverse.py) | N/A
+| String | Character Count | Count number of characters of an input string. | [Source](../examples/python/string/character_count.py) | N/A
+| String | String Reverse | Provide reverse order of input string. | [Source](../examples/python/string/string_reverse.py) | N/A
 | String | String Explode | Split a string into an array with the specified separator string. | N/A | N/A
 | String | Take | ... | N/A | N/A
-| Array | Array Length | Get item count of an input array. | [Source](../examples/python/array/array-length.py) | N/A
-| Array | Array Sum | Sum all numbers together from an input number array. | [Source](../examples/python/array/array-sum.py) | N/A
+| Array | Array Length | Get item count of an input array. | [Source](../examples/python/array/array_length.py) | N/A
+| Array | Array Sum | Sum all numbers together from an input number array. | [Source](../examples/python/array/array_sum.py) | N/A
 | Array | Array Reverse | Provide reverse order of input array. | N/A | N/A
 | Array | Array Implode | Concatenate array items into string with the specified separator string. | N/A | N/A
 | Array | Push | Append an input number into the specified array and output as response. | N/A | N/A
@@ -40,16 +40,16 @@ Code examples on writing smart contract for tackling specific problem.
 | Encode | HASH160 | ... | N/A | N/A
 | Encode | HASH256 | ... | N/A | N/A
 | Storage | Storage Echo | ... | N/A | N/A
-| Block | Current Height | Get current block height. | [Source](../examples/python/block/current-height.py) | N/A
-| Block | Current Timestamp | Get timestamp of current block. | [Source](../examples/python/block/current-timestamp.py) | N/A
-| Block | Block Timestamp | Get timestamp of a given block height. | [Source](../examples/python/block/block-timestamp.py) | N/A
+| Block | Current Height | Get current block height. | [Source](../examples/python/block/current_height.py) | N/A
+| Block | Current Timestamp | Get timestamp of current block. | [Source](../examples/python/block/current_timestamp.py) | N/A
+| Block | Block Timestamp | Get timestamp of a given block height. | [Source](../examples/python/block/block_timestamp.py) | N/A
 | Block | Block Index | ... | N/A | N/A
 | Block | Block Version | ... | N/A | N/A
-| Block | Block Merkle Root | Get merkle root of a given block height. | [Source](../examples/python/block/block-merkle-root.py) | N/A
+| Block | Block Merkle Root | Get merkle root of a given block height. | [Source](../examples/python/block/block_merkle_root.py) | N/A
 | Block | Block Previous Hash | ... | N/A | N/A
-| Block | Block Hash | Get hash of a given block height. | [Source](../examples/python/block/block-hash.py) | N/A
-| Block | Block Consensus | Get consensus value of a given block height. | [Source](../examples/python/block/block-consensus.py) | N/A
-| Block | Next Consensus | Get next consensus value of a given block height. | [Source](../examples/python/block/next-consensus.py) | N/A
+| Block | Block Hash | Get hash of a given block height. | [Source](../examples/python/block/block_hash.py) | N/A
+| Block | Block Consensus | Get consensus value of a given block height. | [Source](../examples/python/block/block_consensus.py) | N/A
+| Block | Next Consensus | Get next consensus value of a given block height. | [Source](../examples/python/block/next_consensus.py) | N/A
 | Block | Block Transaction Count | ... | N/A | N/A
 | Block | Block Transactions | ... | N/A | N/A
 | Block | Block Transaction | ... | N/A | N/A
