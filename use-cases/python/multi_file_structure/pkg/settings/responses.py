@@ -1,6 +1,6 @@
-class ErrorResponse:
+class ErrorResponse():
     def GetUnknownOperation():
-        return 'UNKNOWN_OPERATION'
+        return 'ERR_UNKNOWN_OPERATION'
 
     def GetInvalidArgsLength():
-        return 'INVALID_ARGS_LENGTH'
+        return 'ERR_INVALID_ARGS_LENGTH'

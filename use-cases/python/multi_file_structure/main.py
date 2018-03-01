@@ -1,7 +1,7 @@
 """
 Date Created:               2018-03-01
-Date Modified:              2018-03-01
-Version:                    1
+Date Modified:              2018-03-02
+Version:                    4
 Contract Hash:              ee4fc9a20e7b413a9fc830453a8a6a278f7590e5
 Available on NEO TestNet:   False
 Available on CoZ TestNet:   False
@@ -22,7 +22,7 @@ from pkg.settings.responses import ErrorResponse
 
 
 # Global
-VERSION = 3
+VERSION = 4
 
 
 def Main(operation: str, args: list) -> bytearray:
@@ -48,7 +48,8 @@ def do_version() -> int:
 
 
 def do_magic_word() -> str:
-    result = Config.MagicWord()
+    config = Config()
+    result = config.magic_word
     return result
 
 

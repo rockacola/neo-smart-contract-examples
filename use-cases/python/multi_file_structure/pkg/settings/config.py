@@ -1,3 +1,2 @@
-class Config:
-    def GetMagicWord():
-        return 'Accio'
+class Config():
+    magic_word = 'Accio'
