@@ -192,6 +192,12 @@ build /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/use-cases/pyt
 import contract /lint/travis/ProjectGit/rockacola/neo-smart-contract-examples/use-cases/python/functional-utilities/functional-utilities.avm 0710 05 False False
 ```
 
+##### Multi File Setup
+
+``` py
+build /Users/lint/ProjectGit/rockacola/neo-smart-contract-examples/use-cases/python/multi-file-structure/main.py test 0710 05 False False version
+```
+
 
 
 
