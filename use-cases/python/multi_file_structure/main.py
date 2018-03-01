@@ -2,7 +2,7 @@
 Date Created:               2018-03-01
 Date Modified:              2018-03-01
 Version:                    1
-Contract Hash:              d9fd25d4fdc11f0816325f58a95c8c41c382b9b1
+Contract Hash:              ee4fc9a20e7b413a9fc830453a8a6a278f7590e5
 Available on NEO TestNet:   False
 Available on CoZ TestNet:   False
 Available on MainNet:       False
@@ -18,10 +18,11 @@ Example:
 from boa.blockchain.vm.Neo.Runtime import Notify
 from pkg.helpers.math_helper import MathHelper
 from pkg.settings.config import Config
+from pkg.settings.responses import ErrorResponse
 
 
 # Global
-VERSION = 2
+VERSION = 3
 
 
 def Main(operation: str, args: list) -> bytearray:
@@ -35,7 +36,7 @@ def Main(operation: str, args: list) -> bytearray:
     if operation == 'add':
         result = do_add(args)
         return result
-    Notify('unknown operation')
+    Notify(ErrorResponse.UnknownOperation())
     return False
 
 
@@ -55,10 +56,7 @@ def do_add(args: list) -> int:
     if len(args) > 1:
         n1 = args[0]
         n2 = args[1]
-        # helper = MathHelper()
-        # result = helper.add(n1, n2)
-        # result = n1 + n2
         result = MathHelper.Add(n1, n2)
         return result
-    Notify('invalid argument length')
+    Notify(ErrorResponse.InvalidArgsLength())
     return False
