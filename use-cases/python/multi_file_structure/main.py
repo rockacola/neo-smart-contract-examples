@@ -1,8 +1,8 @@
 """
 Date Created:               2018-03-01
 Date Modified:              2018-03-02
-Version:                    4
-Contract Hash:              f31fef19465e16caa6e5dc8beab99a6a628e2f72
+Version:                    5
+Contract Hash:              1d9508f770dc21bb0f391e96c3b133a6b577ada3
 Available on NEO TestNet:   False
 Available on CoZ TestNet:   False
 Available on MainNet:       False
@@ -20,10 +20,11 @@ from pkg.helpers.math_helper import MathHelper
 from pkg.settings.config import Config
 from pkg.settings.responses import ErrorResponse
 from pkg.models.storage import Storage
+from pkg.models.counter import Counter
 
 
 # Global
-VERSION = 4
+VERSION = 5
 
 
 def Main(operation: str, args: list) -> bytearray:
@@ -41,11 +42,14 @@ def Main(operation: str, args: list) -> bytearray:
     elif operation == 'add':
         result = do_add(args)
         return result
-    elif operation == 'get_storage':
-        result = do_get_storage(args)
+    elif operation == 'get_count':
+        result = do_get_count()
         return result
-    elif operation == 'set_storage':
-        result = do_set_storage(args)
+    elif operation == 'count_up':
+        result = do_count_up()
+        return result
+    elif operation == 'count_down':
+        result = do_count_down()
         return result
     err = ErrorResponse()
     Notify(err.unknown_operation)
@@ -75,28 +79,19 @@ def do_add(args: list) -> bytearray:
     return err.invalid_args_length
 
 
-def do_get_storage(args: list) -> bytearray:
-    Notify('do_get_storage triggered')
-    if len(args) > 0:
-        key = args[0]
-        Notify('key:')
-        Notify(key)
-        storage = Storage()
-        result = storage.get(key)
-        Notify('result:')
-        Notify(result)
-        return result
-    err = ErrorResponse()
-    return err.invalid_args_length
+def do_get_count() -> bytearray:
+    counter = Counter()
+    result = counter.get()
+    return result
 
 
-def do_set_storage(args: list) -> bytearray:
-    Notify('do_set_storage triggered')
-    if len(args) > 1:
-        key = args[0]
-        value = args[1]
-        storage = Storage()
-        storage.put(key, value)
-        return True
-    err = ErrorResponse()
-    return err.invalid_args_length
+def do_count_up() -> bytearray:
+    counter = Counter()
+    result = counter.up()
+    return True
+
+
+def do_count_down() -> bytearray:
+    counter = Counter()
+    result = counter.down()
+    return True
