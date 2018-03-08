@@ -1,3 +1,12 @@
+
+
+
+#### Constant
+
+``` py
+build /Users/travis/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/constant/local_variable.py test ff 07 False False
+```
+
 #### Number
 
 ##### Add
