@@ -15,7 +15,7 @@ Code examples on writing smart contract for tackling specific problem.
 | Number | Power | Base to the exponent power of input numbers. | [Source](../examples/python/number/power.py) | N/A
 | Number | Fibonacci | Fibonacci value of an input number. | [Source](../examples/python/number/fibonacci.py) | N/A
 | Number | Is Prime | Check if an input number is a prime number. | N/A | N/A
-| Number | Minimum | Find the smallest of 2 input numbers. | N/A | N/A
+| Number | Minimum | Find the smallest of 2 input numbers. | [Source](../examples/python/number/minimum.py) | N/A
 | Number | Maximum | Find the biggest of 2 input numbers. | N/A | N/A
 | Number | Absolute | Get the absolute value of an input number. | N/A | N/A
 | String | Character Count | Count number of characters of an input string. | [Source](../examples/python/string/character_count.py) | N/A

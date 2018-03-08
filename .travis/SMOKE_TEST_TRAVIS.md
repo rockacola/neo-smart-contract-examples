@@ -9,11 +9,10 @@ build /Users/travis/ProjectGit/rockacola/neo-smart-contract-examples/examples/py
 
 #### Number
 
-##### Add
-
 ``` py
 build /Users/travis/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/number/add.py test 0505 02 False False 2 5
-import contract /Users/travis/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/number/add.avm 0505 02 False False
+
+build /Users/travis/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/number/minimum.py test 0505 02 False False 2 5
 ```
 
 #### Block
