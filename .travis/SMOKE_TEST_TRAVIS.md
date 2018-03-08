@@ -15,6 +15,12 @@ build /Users/travis/ProjectGit/rockacola/neo-smart-contract-examples/examples/py
 build /Users/travis/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/number/minimum.py test 0505 02 False False 2 5
 ```
 
+#### Encode
+
+``` py
+build /Users/travis/ProjectGit/rockacola/neo-smart-contract-examples/examples/python/encode/sha1.py test 07 05 False False lorem
+```
+
 #### Block
 
 ##### Current Height

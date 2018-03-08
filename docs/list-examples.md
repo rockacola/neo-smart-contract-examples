@@ -35,7 +35,7 @@ Code examples on writing smart contract for tackling specific problem.
 | Iterator | While Breaker | ... | N/A | N/A
 | Bytes | ... | ... | N/A | N/A
 | Encode | Integer to String | Convert input number to string format. | [Source](../examples/python/encode/int2str.py) | N/A
-| Encode | SHA1 | ... | N/A | N/A
+| Encode | SHA1 | Generate SHA1 hash value of input string. | [Source](../examples/python/encode/sha1.py) | N/A
 | Encode | SHA256 | ... | N/A | N/A
 | Encode | HASH160 | ... | N/A | N/A
 | Encode | HASH256 | ... | N/A | N/A
