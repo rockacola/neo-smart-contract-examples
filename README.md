@@ -13,10 +13,10 @@
   Collection of well documented examples to get started with smart contract development in NEO blockchain.
 </p>
 
-<!-- <p align="center">
+<p align="center">
   <a href="README.md"><strong>English</strong></a> /
   <a href="README_zh-cn.md"><strong>中文</strong></a>
-</p> -->
+</p>
 
 ## Overview
 

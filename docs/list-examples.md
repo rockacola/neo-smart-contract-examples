@@ -4,14 +4,14 @@ Code examples on writing smart contract for tackling specific problem.
 
 | Category | Name | Description | Python | C#
 | --- | --- | --- | --- | ---
-| Constant | Forty Two | Returns `42`, that's it. | [Source](../examples/python/constant/forty_two.py) | N/A
+| Constant | Forty Two | Returns `42`, that's it. | [Source](../examples/python/constant/forty_two.py) | [Source](../examples/csharp/constant/forty_two.cs)
 | Constant | Local Variable | Returns string value of a local constant. | N/A | N/A
 | Constant | Global Variable | Returns integer value of a global constant. | N/A | N/A
 | Constant | Global Variable 2 | Returns bytes value of a global constant. | N/A | N/A
 | Constant | Echo | Returns the exact value as of its input. | N/A | N/A
-| Number | Add | Sum 2 input numbers together. | [Source](../examples/python/number/add.py) | N/A
-| Number | Multiply | Multiply 2 input numbers together. | [Source](../examples/python/number/multiply.py) | N/A
-| Number | Square | Returns square of an input number. | [Source](../examples/python/number/square.py) | N/A
+| Number | Add | Sum 2 input numbers together. | [Source](../examples/python/number/add.py) | [Source](../examples/csharp/number/add.cs)
+| Number | Multiply | Multiply 2 input numbers together. | [Source](../examples/python/number/multiply.py) | [Source](../examples/csharp/number/multiply.cs)
+| Number | Square | Returns square of an input number. | [Source](../examples/python/number/square.py) | [Source](../examples/csharp/number/square.cs)
 | Number | Power | Base to the exponent power of input numbers. | [Source](../examples/python/number/power.py) | N/A
 | Number | Fibonacci | Fibonacci value of an input number. | [Source](../examples/python/number/fibonacci.py) | N/A
 | Number | Is Prime | Check if an input number is a prime number. | N/A | N/A
